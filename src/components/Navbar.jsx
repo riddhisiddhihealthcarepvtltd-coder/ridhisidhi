@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Menu, ChevronDown } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import { companyInfo } from '../data/company';
 
 const Navbar = ({ onOpenAppointment }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', path: '/', active: true },
+    { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services', hasDropdown: true },
     { name: 'Our Team', path: '/team' },
@@ -15,40 +16,44 @@ const Navbar = ({ onOpenAppointment }) => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full z-50">
+    <>
       {/* Top Header Bar */}
-      <div className="bg-[#8b5cf6] text-white text-sm py-2.5 font-medium tracking-wide">
-        <div className="container mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-24 flex flex-col sm:flex-row items-center justify-center gap-10">
+      <div className="w-full bg-[#8b5cf6] text-white text-xs sm:text-sm py-2.5 font-medium tracking-wide">
+        <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-6">
           <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            <span>(+12)345-6789-1123</span>
+            <Phone className="w-3.5 h-3.5" />
+            <span>{companyInfo.phone} / {companyInfo.mobile}</span>
           </div>
           <div className="flex items-center gap-2">
-            <Mail className="w-4 h-4" />
-            <span>Avida@Mail.Com</span>
+            <Mail className="w-3.5 h-3.5" />
+            <span>{companyInfo.email}</span>
           </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" />
-            <span>Somewhere, Earth</span>
+          <div className="hidden md:flex items-center gap-2">
+            <MapPin className="w-3.5 h-3.5" />
+            <span>{companyInfo.address.full}</span>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <header className="w-full bg-transparent py-5">
-        <div className="container mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-24 flex items-center justify-between">
+      {/* Main Sticky Navbar */}
+      <header className="sticky top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100/80 transition-all duration-300 py-3 sm:py-3.5">
+        <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24 flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-1 shrink-0">
-             <div className="flex items-center justify-center text-[#8b5cf6] mr-1">
-               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 2V7H6V11H11V16H15V11H20V7H15V2H11Z" />
-               </svg>
-             </div>
-             <span className="font-sans font-bold text-3xl text-black tracking-tight">
-               AVIDA
-             </span>
-             <svg className="w-10 h-10 text-[#a78bfa] ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          <Link to="/" className="flex items-center gap-3 shrink-0 group">
+            <img
+              src="/assets/logo.png"
+              alt="Riddhi Siddhi Health Care Logo"
+              className="h-11 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="flex flex-col">
+              <span className="font-heading font-extrabold text-base sm:text-xl text-[#111827] leading-tight tracking-tight">
+                Riddhi Siddhi
+              </span>
+              <span className="text-[10px] sm:text-xs text-[#8b5cf6] font-bold tracking-wider uppercase">
+                Health Care Pvt. Ltd.
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -58,9 +63,9 @@ const Navbar = ({ onOpenAppointment }) => {
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
-                    `font-semibold text-[15px] transition-colors duration-200 ${link.active
-                      ? 'text-[#a78bfa]'
-                      : 'text-[#111827] hover:text-[#a78bfa]'
+                    `font-semibold text-[15px] transition-colors duration-200 ${isActive
+                      ? 'text-[#8b5cf6]'
+                      : 'text-[#111827] hover:text-[#8b5cf6]'
                     }`
                   }
                 >
@@ -105,7 +110,7 @@ const Navbar = ({ onOpenAppointment }) => {
         onClose={() => setMobileMenuOpen(false)}
         onOpenAppointment={onOpenAppointment}
       />
-    </div>
+    </>
   );
 };
 

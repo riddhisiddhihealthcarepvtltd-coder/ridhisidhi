@@ -4,7 +4,7 @@ import { Phone, ThumbsUp } from 'lucide-react';
 
 const Hero = ({ onOpenAppointment }) => {
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] min-h-[600px] flex items-center">
+    <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] min-h-[550px] flex items-center">
       <div className="container mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-24 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           
