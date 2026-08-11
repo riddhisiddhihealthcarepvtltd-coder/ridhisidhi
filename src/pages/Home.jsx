@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Award, Stethoscope, Users, Building2, Quote, Star } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import PageTransition from '../components/PageTransition';
@@ -10,6 +10,69 @@ import CTA from '../components/CTA';
 import SafeImage from '../components/SafeImage';
 import { servicesData } from '../data/services';
 import { companyInfo, imageConfig } from '../data/company';
+
+const AnimatedCounter = ({ value, suffix = "", duration = 2 }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime = null;
+    const startValue = 0;
+
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const currentCount = Math.floor(easeProgress * (value - startValue) + startValue);
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setCount(value);
+      }
+    };
+
+    requestAnimationFrame(step);
+  }, [isInView, value, duration]);
+
+  return (
+    <span ref={ref}>
+      {count.toLocaleString()}
+      {suffix}
+    </span>
+  );
+};
+
+const statsBannerData = [
+  {
+    icon: Award,
+    value: 10,
+    suffix: "+ Years",
+    label: "Of Healthcare Experience"
+  },
+  {
+    icon: Stethoscope,
+    value: 15,
+    suffix: "+",
+    label: "Doctors & Staff"
+  },
+  {
+    icon: Users,
+    value: 10000,
+    suffix: "+",
+    label: "Satisfied Patients"
+  },
+  {
+    icon: Building2,
+    value: 100,
+    suffix: "%",
+    label: "Genuine Medicines"
+  }
+];
 
 const Home = ({ onOpenAppointment }) => {
   return (
@@ -129,14 +192,18 @@ const Home = ({ onOpenAppointment }) => {
 
               {/* 10 Years Badge */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ scale: 1.04 }}
                 viewport={{ once: true }}
-                className="absolute -bottom-8 sm:-bottom-12 lg:-bottom-16 left-0 sm:left-4 lg:left-8 z-20"
+                transition={{ duration: 0.5 }}
+                className="absolute -bottom-8 sm:-bottom-12 lg:-bottom-16 left-0 sm:left-4 lg:left-8 z-20 cursor-pointer"
               >
                 <div className="bg-[#00897b] text-white p-4 sm:p-7 lg:p-12 rounded-[12px] sm:rounded-[22px] sm:rounded-br-[80px] shadow-2xl flex items-center gap-3 sm:gap-5 lg:gap-6">
                   <div className="font-sans font-bold text-white flex flex-col items-center">
-                    <span className="text-[42px] sm:text-[64px] lg:text-[76px] leading-[0.9]">10</span>
+                    <span className="text-[42px] sm:text-[64px] lg:text-[76px] leading-[0.9]">
+                      <AnimatedCounter value={10} />
+                    </span>
                     <span className="text-[14px] sm:text-[20px] lg:text-[22px] font-semibold mt-1 sm:mt-2">Years</span>
                   </div>
                   <div className="w-[1px] sm:w-[2px] h-12 sm:h-20 bg-white/40"></div>
@@ -187,42 +254,39 @@ const Home = ({ onOpenAppointment }) => {
       </section>
 
       {/* 4. Solid Teal Stats Banner */}
-      <section className="py-14 bg-[#1f8a86] text-white relative overflow-hidden shadow-inner">
-        <div className="container mx-auto max-w-[1400px] px-8 lg:px-16 xl:px-24 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/20 text-center">
+      <section className="py-16 sm:py-20 bg-[#1f8a86] text-white relative overflow-hidden shadow-inner">
+        {/* Animated background radial glows */}
+        <div className="absolute top-0 left-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl pointer-events-none"></div>
 
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="p-4">
-              <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3">
-                <Award className="w-6 h-6 text-white" />
-              </div>
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-1 text-white">10+ Years</div>
-              <div className="text-xs text-[#dceff4] uppercase tracking-wider font-bold">Of Healthcare Experience</div>
-            </motion.div>
+        <div className="container mx-auto max-w-[1400px] px-6 lg:px-16 xl:px-24 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            {statsBannerData.map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 35, scale: 0.92 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ y: -8, scale: 1.03 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: idx * 0.12 }}
+                className="group relative bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden cursor-pointer"
+              >
+                {/* Shimmer highlight effect on hover */}
+                <div className="absolute -inset-x-full inset-y-0 bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="p-4">
-              <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3">
-                <Stethoscope className="w-6 h-6 text-white" />
-              </div>
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-1 text-white">15+</div>
-              <div className="text-xs text-[#dceff4] uppercase tracking-wider font-bold">Doctors & Staff</div>
-            </motion.div>
+                <div className="w-14 h-14 rounded-2xl bg-white/15 group-hover:bg-white group-hover:text-[#1f8a86] text-white flex items-center justify-center mx-auto mb-4 transition-all duration-300 shadow-inner group-hover:scale-110 group-hover:rotate-6">
+                  <stat.icon className="w-7 h-7 transition-colors duration-300" />
+                </div>
 
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="p-4">
-              <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3">
-                <Users className="w-6 h-6 text-white" />
-              </div>
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-1 text-white">10,000+</div>
-              <div className="text-xs text-[#dceff4] uppercase tracking-wider font-bold">Satisfied Patients</div>
-            </motion.div>
+                <div className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-2 text-white tracking-tight drop-shadow-sm">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </div>
 
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="p-4">
-              <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3">
-                <Building2 className="w-6 h-6 text-white" />
-              </div>
-              <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-1 text-white">100%</div>
-              <div className="text-xs text-[#dceff4] uppercase tracking-wider font-bold">Genuine Medicines</div>
-            </motion.div>
-
+                <div className="text-xs sm:text-sm text-[#dceff4] group-hover:text-white uppercase tracking-wider font-extrabold transition-colors">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

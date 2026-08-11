@@ -49,4 +49,36 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1f8a86] to-[#12635f];
   }
+
+  .animate-heartbeat-underline {
+    transform-origin: center;
+    animation: heartbeat-underline 0.85s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes heartbeat-underline {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.3;
+  }
+  25% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scaleX(0.6);
+    opacity: 0.85;
+  }
+  70% {
+    transform: scaleX(1.08);
+    opacity: 1;
+  }
+  85% {
+    transform: scaleX(0.9);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }

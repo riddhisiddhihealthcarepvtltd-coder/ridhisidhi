@@ -59,22 +59,33 @@ const Navbar = ({ onOpenAppointment }) => {
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((link) => (
-              <div key={link.name} className="flex items-center gap-1 cursor-pointer">
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `font-semibold text-[15px] transition-colors duration-200 ${isActive
-                      ? 'text-[#8b5cf6]'
-                      : 'text-[#111827] hover:text-[#8b5cf6]'
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-                {link.hasDropdown && (
-                  <ChevronDown className="w-4 h-4 text-[#111827]" />
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  `relative py-1.5 font-semibold text-[15px] transition-colors duration-200 group flex items-center gap-1.5 ${
+                    isActive ? 'text-[#8b5cf6]' : 'text-[#111827] hover:text-[#8b5cf6]'
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <span>{link.name}</span>
+                    {link.hasDropdown && (
+                      <ChevronDown className="w-4 h-4 text-[#111827] group-hover:text-[#8b5cf6] transition-colors" />
+                    )}
+
+                    {/* Heartbeat Expand & Contract Underline Animation */}
+                    <span
+                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8b5cf6] rounded-full origin-center ${
+                        isActive
+                          ? 'opacity-100 scale-x-100 animate-heartbeat-underline'
+                          : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:animate-heartbeat-underline'
+                      }`}
+                    />
+                  </>
                 )}
-              </div>
+              </NavLink>
             ))}
           </nav>
 
