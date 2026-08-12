@@ -9,10 +9,10 @@ const CTA = ({
   onOpenAppointment
 }) => {
   return (
-    <section className="py-20 bg-[#1f8a86] text-white relative overflow-hidden">
+    <section className="py-20 bg-[#8b5cf6] text-white relative overflow-hidden">
       {/* Background Glow Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#12635f]/40 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#6d28d9]/40 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
         <motion.div
@@ -29,16 +29,16 @@ const CTA = ({
             {title}
           </h2>
 
-          <p className="text-[#dceff4] text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-medium">
+          <p className="text-[#f3e8ff] text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-medium">
             {subtitle}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenAppointment}
-              className="px-8 py-4 rounded-full bg-white hover:bg-[#f7fbfb] text-[#12635f] font-heading font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 active:scale-95"
+              className="px-8 py-4 rounded-full bg-white hover:bg-[#faf5ff] text-[#6d28d9] font-heading font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 active:scale-95"
             >
-              <Calendar className="w-4 h-4 text-[#1f8a86]" />
+              <Calendar className="w-4 h-4 text-[#8b5cf6]" />
               <span>Book Appointment Now</span>
             </button>
 

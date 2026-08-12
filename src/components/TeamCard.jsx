@@ -11,9 +11,7 @@ const TeamCard = ({ member, index = 0 }) => {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
-      className={`bg-white rounded-3xl overflow-hidden border ${
-        member.isLeadership ? 'border-brand-teal/40 shadow-md' : 'border-slate-200 shadow-sm'
-      } hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group`}
+      className="bg-white rounded-3xl overflow-hidden border border-[#e9d5ff] shadow-sm hover:shadow-md hover:border-[#8b5cf6]/60 transition-all duration-300 flex flex-col justify-between group"
     >
       <div>
         {/* Member Photo Container */}
@@ -28,11 +26,11 @@ const TeamCard = ({ member, index = 0 }) => {
 
           {/* Badge Overlay */}
           <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-            <span className="text-[11px] font-heading font-extrabold px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-brand-teal-dark shadow-sm">
+            <span className="text-[11px] font-heading font-extrabold px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#8b5cf6] shadow-sm">
               {member.badge}
             </span>
             {member.isLeadership && (
-              <span className="bg-brand-teal text-white p-1.5 rounded-full shadow-md">
+              <span className="bg-[#8b5cf6] text-white p-1.5 rounded-full shadow-md">
                 <ShieldCheck className="w-4 h-4" />
               </span>
             )}
@@ -40,7 +38,7 @@ const TeamCard = ({ member, index = 0 }) => {
 
           {/* Bottom Title Overlay */}
           <div className="absolute bottom-4 left-4 right-4 text-white">
-            <div className="text-xs font-medium text-emerald-300 flex items-center gap-1 mb-0.5">
+            <div className="text-xs font-medium text-purple-300 flex items-center gap-1 mb-0.5">
               <UserCheck className="w-3.5 h-3.5" />
               <span>{member.role}</span>
             </div>
@@ -57,7 +55,7 @@ const TeamCard = ({ member, index = 0 }) => {
           </p>
 
           {member.isPlaceholder && (
-            <div className="text-[11px] text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200/60 font-medium">
+            <div className="text-[11px] text-purple-800 bg-purple-50 px-3 py-1.5 rounded-lg border border-purple-200 font-medium">
               * Visiting/Consultant position profile
             </div>
           )}

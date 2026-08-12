@@ -47,7 +47,7 @@ const Team = ({ onOpenAppointment }) => {
 
       {/* Team Grid */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24">
           <SectionHeader
             centered
             kicker="Our Staff"

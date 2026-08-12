@@ -15,14 +15,14 @@ const ServiceCard = ({ service, index = 0, onOpenAppointment }) => {
   const IconComponent = iconMap[service.icon] || Stethoscope;
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-[#dce8e9] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl p-6 border border-[#e9d5ff] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
       <div>
         {/* Soft Sky Circular Icon Accent Area */}
-        <div className="w-14 h-14 rounded-xl bg-[#dceff4] text-[#1f8a86] flex items-center justify-center mb-5 group-hover:bg-[#1f8a86] group-hover:text-white transition-colors duration-300">
+        <div className="w-14 h-14 rounded-xl bg-[#f3e8ff] text-[#8b5cf6] flex items-center justify-center mb-5 group-hover:bg-[#8b5cf6] group-hover:text-white transition-colors duration-300">
           <IconComponent className="w-7 h-7 stroke-[1.75]" />
         </div>
 
-        <h3 className="font-heading font-extrabold text-lg text-[#16353a] mb-2.5 group-hover:text-[#1f8a86] transition-colors">
+        <h3 className="font-heading font-extrabold text-lg text-[#111827] mb-2.5 group-hover:text-[#8b5cf6] transition-colors">
           {service.title}
         </h3>
 
@@ -31,10 +31,10 @@ const ServiceCard = ({ service, index = 0, onOpenAppointment }) => {
         </p>
       </div>
 
-      <div className="pt-4 border-t border-[#dce8e9] flex items-center justify-between">
+      <div className="pt-4 border-t border-[#e9d5ff] flex items-center justify-between">
         <button
           onClick={onOpenAppointment}
-          className="inline-flex items-center gap-1.5 text-xs font-heading font-bold text-[#1f8a86] hover:text-[#12635f] group-hover:translate-x-0.5 transition-all"
+          className="inline-flex items-center gap-1.5 text-xs font-heading font-bold text-[#8b5cf6] hover:text-[#7c3aed] group-hover:translate-x-0.5 transition-all"
         >
           <span>Learn More</span>
           <ArrowRight className="w-3.5 h-3.5" />

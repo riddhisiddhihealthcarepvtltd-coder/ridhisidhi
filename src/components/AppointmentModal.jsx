@@ -47,7 +47,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-[#16353a]/70 backdrop-blur-sm"
+          className="fixed inset-0 bg-[#111827]/70 backdrop-blur-sm"
         />
 
         {/* Modal Window */}
@@ -55,10 +55,10 @@ const AppointmentModal = ({ isOpen, onClose }) => {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-[#dce8e9] z-10 my-8"
+          className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-[#e9d5ff] z-10 my-8"
         >
-          {/* Solid Teal Header */}
-          <div className="bg-[#1f8a86] p-6 text-white relative border-b border-[#12635f]">
+          {/* Solid Purple Header */}
+          <div className="bg-[#8b5cf6] p-6 text-white relative border-b border-[#7c3aed]">
             <button
               onClick={onClose}
               className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
@@ -67,15 +67,15 @@ const AppointmentModal = ({ isOpen, onClose }) => {
               <X className="w-5 h-5 text-white" />
             </button>
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-[#dceff4] text-xs font-bold uppercase tracking-wider mb-2 border border-white/20">
-              <Calendar className="w-3.5 h-3.5 text-[#dceff4]" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-[#f3e8ff] text-xs font-bold uppercase tracking-wider mb-2 border border-white/20">
+              <Calendar className="w-3.5 h-3.5 text-[#f3e8ff]" />
               <span>Easy Online Booking</span>
             </div>
 
             <h3 className="text-2xl font-heading font-extrabold text-white">
               Book an Appointment
             </h3>
-            <p className="text-[#dceff4] text-xs mt-1 font-medium">
+            <p className="text-[#f3e8ff] text-xs mt-1 font-medium">
               Fill in your details below to send an appointment request directly to our WhatsApp support team.
             </p>
           </div>
@@ -83,8 +83,8 @@ const AppointmentModal = ({ isOpen, onClose }) => {
           {/* Form Content */}
           <form onSubmit={handleSubmit} className="p-6 space-y-4 bg-white">
             <div className="space-y-1">
-              <label className="text-xs font-bold text-[#16353a] flex items-center gap-1.5 ml-1">
-                <User className="w-3.5 h-3.5 text-[#1f8a86]" />
+              <label className="text-xs font-bold text-[#111827] flex items-center gap-1.5 ml-1">
+                <User className="w-3.5 h-3.5 text-[#8b5cf6]" />
                 Full Name *
               </label>
               <input
@@ -94,13 +94,13 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your full name"
-                className="w-full bg-[#f7fbfb] border border-[#dce8e9] text-sm text-[#16353a] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1f8a86] focus:border-[#1f8a86] transition-all"
+                className="w-full bg-[#faf5ff] border border-[#e9d5ff] text-sm text-[#111827] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs font-bold text-[#16353a] flex items-center gap-1.5 ml-1">
-                <Phone className="w-3.5 h-3.5 text-[#1f8a86]" />
+              <label className="text-xs font-bold text-[#111827] flex items-center gap-1.5 ml-1">
+                <Phone className="w-3.5 h-3.5 text-[#8b5cf6]" />
                 Phone Number *
               </label>
               <input
@@ -110,21 +110,21 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="98XXXXXXXX"
-                className="w-full bg-[#f7fbfb] border border-[#dce8e9] text-sm text-[#16353a] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1f8a86] focus:border-[#1f8a86] transition-all"
+                className="w-full bg-[#faf5ff] border border-[#e9d5ff] text-sm text-[#111827] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-xs font-bold text-[#16353a] flex items-center gap-1.5 ml-1">
-                  <Stethoscope className="w-3.5 h-3.5 text-[#1f8a86]" />
+                <label className="text-xs font-bold text-[#111827] flex items-center gap-1.5 ml-1">
+                  <Stethoscope className="w-3.5 h-3.5 text-[#8b5cf6]" />
                   Required Service
                 </label>
                 <select
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="w-full bg-[#f7fbfb] border border-[#dce8e9] text-sm text-[#16353a] rounded-xl px-3 py-3 focus:outline-none focus:ring-2 focus:ring-[#1f8a86] focus:border-[#1f8a86] transition-all appearance-none"
+                  className="w-full bg-[#faf5ff] border border-[#e9d5ff] text-sm text-[#111827] rounded-xl px-3 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all appearance-none"
                 >
                   {servicesData.map((s) => (
                     <option key={s.id} value={s.title}>
@@ -137,8 +137,8 @@ const AppointmentModal = ({ isOpen, onClose }) => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-[#16353a] flex items-center gap-1.5 ml-1">
-                  <Calendar className="w-3.5 h-3.5 text-[#1f8a86]" />
+                <label className="text-xs font-bold text-[#111827] flex items-center gap-1.5 ml-1">
+                  <Calendar className="w-3.5 h-3.5 text-[#8b5cf6]" />
                   Preferred Date
                 </label>
                 <input
@@ -146,14 +146,14 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
-                  className="w-full bg-[#f7fbfb] border border-[#dce8e9] text-sm text-[#16353a] rounded-xl px-3 py-3 focus:outline-none focus:ring-2 focus:ring-[#1f8a86] focus:border-[#1f8a86] transition-all"
+                  className="w-full bg-[#faf5ff] border border-[#e9d5ff] text-sm text-[#111827] rounded-xl px-3 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all"
                 />
               </div>
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs font-bold text-[#16353a] flex items-center gap-1.5 ml-1">
-                <MessageSquare className="w-3.5 h-3.5 text-[#1f8a86]" />
+              <label className="text-xs font-bold text-[#111827] flex items-center gap-1.5 ml-1">
+                <MessageSquare className="w-3.5 h-3.5 text-[#8b5cf6]" />
                 Additional Note (Optional)
               </label>
               <textarea
@@ -162,7 +162,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                 value={formData.notes}
                 onChange={handleChange}
                 placeholder="Briefly describe your medical requirement or inquiry..."
-                className="w-full bg-[#f7fbfb] border border-[#dce8e9] text-sm text-[#16353a] rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1f8a86] focus:border-[#1f8a86] transition-all resize-none"
+                className="w-full bg-[#faf5ff] border border-[#e9d5ff] text-sm text-[#111827] rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all resize-none"
               ></textarea>
             </div>
 
@@ -170,7 +170,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
               {/* Solid High-Contrast WhatsApp Button */}
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-[#1f8a86] hover:bg-[#12635f] text-white font-heading font-extrabold text-sm shadow-md shadow-[#1f8a86]/30 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
+                className="w-full py-4 rounded-xl bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-heading font-extrabold text-sm shadow-md shadow-[#8b5cf6]/30 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
               >
                 <Send className="w-4 h-4 text-white" />
                 <span className="text-white">Send Request via WhatsApp (9851157228)</span>

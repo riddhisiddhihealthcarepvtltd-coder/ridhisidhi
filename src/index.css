@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --teal: #1f8a86;
-  --teal-dark: #12635f;
-  --sky: #dceff4;
-  --ink: #16353a;
-  --muted: #647b80;
-  --paper: #f7fbfb;
+  --teal: #8b5cf6;
+  --teal-dark: #7c3aed;
+  --sky: #f3e8ff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --paper: #ffffff;
   --white: #ffffff;
-  --border: #dce8e9;
-  --footer-bg: #0d3033;
-  --footer-dark: #123f43;
-  --footer-text: #b8cfd1;
+  --border: #e9d5ff;
+  --footer-bg: #1e1b4b;
+  --footer-dark: #2e1065;
+  --footer-text: #ddd6fe;
 }
 
 @layer base {
@@ -33,21 +33,21 @@
 @layer components {
   /* Button Styles adhering strictly to specifications */
   .btn-primary {
-    @apply bg-[#1f8a86] hover:bg-[#12635f] text-white font-heading font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-[#1f8a86]/20 active:scale-95;
+    @apply bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-heading font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-[#8b5cf6]/20 active:scale-95;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-[#f7fbfb] border border-[#dce8e9] text-[#16353a] font-heading font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 active:scale-95;
+    @apply bg-white hover:bg-[#faf5ff] border border-[#e9d5ff] text-[#111827] font-heading font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 active:scale-95;
   }
 
   .card-premium {
-    @apply bg-white border border-[#dce8e9] rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm;
+    @apply bg-white border border-[#e9d5ff] rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1f8a86] to-[#12635f];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8b5cf6] to-[#7c3aed];
   }
 
   .animate-heartbeat-underline {
@@ -81,4 +81,15 @@
     transform: scaleX(1);
     opacity: 1;
   }
+}
+
+@layer utilities {
+  .animate-ticker {
+    animation: ticker-scroll 28s linear infinite;
+  }
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

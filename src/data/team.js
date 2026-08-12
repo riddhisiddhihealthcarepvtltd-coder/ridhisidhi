@@ -3,31 +3,14 @@ import { imageConfig } from "./company";
 export const teamMembers = [
   {
     id: "chairman",
-    name: "Dilopp Kumar Mahsaah",
+    name: "Dileep Kumar Mahaseth",
     role: "Chairman & Registered Pharmacist",
     image: imageConfig.chairman,
     description: "Leading Riddhi Siddhi Health Care Pvt. Ltd. with a focus on patient welfare, professional ethics, and quality pharmaceutical guidance in Kathmandu.",
     badge: "Leadership & Pharmacy",
     isLeadership: true,
   },
-  {
-    id: "lab-technologist",
-    name: "Mrs. Pooja Karna",
-    role: "Medical Lab Technologist",
-    image: imageConfig.labTechnician,
-    description: "Experienced in clinical diagnostic procedures, sample analysis, and maintaining quality lab protocols for accurate patient diagnostic reporting.",
-    badge: "Clinical Diagnostics",
-    isLeadership: false,
-  },
-  {
-    id: "lab-technician",
-    name: "Clinical Lab Technician",
-    role: "Lab Specialist",
-    image: imageConfig.labTechnologist,
-    description: "Dedicated lab technician responsible for safe specimen handling, hygiene protocols, and diagnostic testing support.",
-    badge: "Laboratory Care",
-    isLeadership: false,
-  },
+
   {
     id: "doctor-consultant",
     name: "Dr. Rakesh Verma, MBBS, MD",
@@ -37,7 +20,27 @@ export const teamMembers = [
     badge: "Medical Practice",
     isLeadership: false,
     isPlaceholder: true,
-  }
+  },
+  {
+    id: "lab-technician",
+    name: "Medical Lab Techinician",
+    role: "Lab Specialist",
+    image: imageConfig.labTechnologist,
+    description: "Dedicated lab technician responsible for safe specimen handling, hygiene protocols, and diagnostic testing support.",
+    badge: "Laboratory Care",
+    isLeadership: false,
+  },
+  {
+    id: "lab-Technician",
+    name: "Mrs. Pooja Karna",
+    role: "Clinical Lab Technician",
+    image: imageConfig.labTechnician,
+    description: "Experienced in clinical diagnostic procedures, sample analysis, and maintaining quality lab protocols for accurate patient diagnostic reporting.",
+    badge: "Clinical Diagnostics",
+    isLeadership: false,
+  },
+
+
 ];
 
 export const leadershipNote = {

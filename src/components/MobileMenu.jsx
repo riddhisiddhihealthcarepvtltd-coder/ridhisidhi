@@ -72,9 +72,9 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
               <a
                 href={`tel:${companyInfo.phoneRaw}`}
-                className="flex items-center gap-3 text-xs text-slate-700 font-medium hover:text-brand-teal"
+                className="flex items-center gap-3 text-xs text-slate-700 font-medium hover:text-[#8b5cf6]"
               >
-                <div className="w-8 h-8 rounded-lg bg-teal-50 text-brand-teal flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-purple-50 text-[#8b5cf6] flex items-center justify-center flex-shrink-0">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
@@ -85,9 +85,9 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
               <a
                 href={`tel:${companyInfo.mobileRaw}`}
-                className="flex items-center gap-3 text-xs text-slate-700 font-medium hover:text-brand-teal"
+                className="flex items-center gap-3 text-xs text-slate-700 font-medium hover:text-[#8b5cf6]"
               >
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-purple-50 text-[#8b5cf6] flex items-center justify-center flex-shrink-0">
                   <MessageSquare className="w-4 h-4" />
                 </div>
                 <div>
@@ -97,7 +97,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
               </a>
 
               <div className="flex items-center gap-3 text-xs text-slate-700">
-                <div className="w-8 h-8 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-purple-50 text-[#8b5cf6] flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="text-xs text-slate-600 leading-tight">
@@ -108,7 +108,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
               <div className="pt-2 flex gap-2">
                 <a
                   href={`tel:${companyInfo.phoneRaw}`}
-                  className="flex-1 text-center py-2.5 bg-brand-teal text-white rounded-xl font-bold text-xs shadow-sm active:scale-95 transition-transform"
+                  className="flex-1 text-center py-2.5 bg-[#8b5cf6] text-white rounded-xl font-bold text-xs shadow-sm active:scale-95 transition-transform"
                 >
                   Call Now
                 </a>
@@ -116,7 +116,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
                   href={companyInfo.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center py-2.5 bg-emerald-600 text-white rounded-xl font-bold text-xs shadow-sm active:scale-95 transition-transform"
+                  className="flex-1 text-center py-2.5 bg-[#7c3aed] text-white rounded-xl font-bold text-xs shadow-sm active:scale-95 transition-transform"
                 >
                   WhatsApp
                 </a>

@@ -27,6 +27,7 @@ export const imageConfig = {
   chairman: "/assets/chairman.jpg",
   labTechnician: "/assets/lab-technician.png",
   labTechnologist: "/assets/lab-technologist.png",
+  owner: "/assets/owner.png",
   doctor: "/assets/male-doctor.png"
 };
 

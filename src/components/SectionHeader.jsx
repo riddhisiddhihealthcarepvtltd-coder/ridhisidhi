@@ -15,9 +15,9 @@ const SectionHeader = ({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-brand-teal-dark text-xs font-heading font-extrabold uppercase tracking-wider mb-3 shadow-2xs"
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-[#7c3aed] text-xs font-heading font-extrabold uppercase tracking-wider mb-3 shadow-2xs"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-teal" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
           {kicker}
         </motion.span>
       )}

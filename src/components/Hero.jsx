@@ -1,22 +1,20 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, ThumbsUp } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const Hero = ({ onOpenAppointment }) => {
   return (
-    <section className="relative w-full min-h-[calc(100vh-110px)] flex items-center py-6 sm:py-8 lg:py-10 overflow-hidden bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7]">
+    <section className="relative w-full min-h-[calc(100vh-110px)] flex items-center py-6 sm:py-8 lg:py-10 bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] overflow-hidden">
       <div className="container mx-auto max-w-[1400px] px-6 lg:px-16 xl:px-24 relative z-10 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
 
           {/* Left Hero Content */}
-          <div className="max-w-2xl lg:pr-6">
+          <div className="max-w-2xl lg:pr-6 relative z-20">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <h1 className="text-3xl sm:text-5xl lg:text-[50px] xl:text-[56px] font-sans font-semibold text-black leading-[1.1] tracking-tight mb-5">
-                Expert Medical Care <br />
+              <h1 className="text-[32px] sm:text-[40px] text-gray-800 md:text-[46px] lg:text-[50px] xl:text-[56px] font-poppins font-semibold text-black leading-[1.1] tracking-relaxed mb-5 select-text">                Expert Medical Care <br />
                 And Resources For A <br />
                 Healthier Life
               </h1>
@@ -48,7 +46,7 @@ const Hero = ({ onOpenAppointment }) => {
           </div>
 
           {/* Right Image/Logo Card Content */}
-          <div className="relative flex items-center justify-center lg:justify-end h-full mt-6 lg:mt-0">
+          <div className="relative flex items-center justify-center lg:justify-end h-full mt-6 lg:mt-0 overflow-visible">
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -102,7 +100,10 @@ const Hero = ({ onOpenAppointment }) => {
                         <path d="M35 50L45 60L65 40" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
-                    <h4 className="font-semibold text-[15px] sm:text-[17px] leading-tight">Certified Care</h4>
+                    <h4 className="font-semibold text-[15px] sm:text-[17px] leading-tight text-white">
+                      Certified Care
+                    </h4>
+
                   </div>
                   <p className="text-[12px] sm:text-[13px] text-white/90 leading-snug">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

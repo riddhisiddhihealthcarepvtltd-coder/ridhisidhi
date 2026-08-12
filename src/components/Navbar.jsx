@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Menu, ChevronDown } from 'lucide-react';
+import { Phone, Mail, MapPin, Menu } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import { companyInfo } from '../data/company';
 
@@ -10,28 +10,36 @@ const Navbar = ({ onOpenAppointment }) => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services', hasDropdown: true },
+    { name: 'Services', path: '/services' },
     { name: 'Our Team', path: '/team' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
   return (
     <>
-      {/* Top Header Bar */}
-      <div className="w-full bg-[#8b5cf6] text-white text-xs sm:text-sm py-2.5 font-medium tracking-wide">
-        <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-6">
-          <div className="flex items-center gap-2">
-            <Phone className="w-3.5 h-3.5" />
-            <span>{companyInfo.phone} / {companyInfo.mobile}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail className="w-3.5 h-3.5" />
-            <span>{companyInfo.email}</span>
-          </div>
-          <div className="hidden md:flex items-center gap-2">
-            <MapPin className="w-3.5 h-3.5" />
-            <span>{companyInfo.address.full}</span>
-          </div>
+      {/* Top Header Bar - Scrolling Ticker */}
+      <div className="w-full bg-[#8b5cf6] text-white text-xs sm:text-sm py-2.5 font-medium tracking-wide overflow-hidden">
+        <div className="flex whitespace-nowrap animate-ticker">
+          {/* Repeated twice for seamless loop */}
+          {[0, 1].map((i) => (
+            <div key={i} className="flex items-center shrink-0 gap-10 px-6">
+              <span className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 shrink-0" />
+                <span>{companyInfo.phone} / {companyInfo.mobile}</span>
+              </span>
+              <span className="text-white/40">•</span>
+              <span className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 shrink-0" />
+                <span>{companyInfo.email}</span>
+              </span>
+              <span className="text-white/40">•</span>
+              <span className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
+                <span>{companyInfo.address.full}</span>
+              </span>
+              <span className="text-white/40">•</span>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -71,16 +79,13 @@ const Navbar = ({ onOpenAppointment }) => {
                 {({ isActive }) => (
                   <>
                     <span>{link.name}</span>
-                    {link.hasDropdown && (
-                      <ChevronDown className="w-4 h-4 text-[#111827] group-hover:text-[#8b5cf6] transition-colors" />
-                    )}
 
-                    {/* Heartbeat Expand & Contract Underline Animation */}
+                    {/* Smooth Slide Underline */}
                     <span
-                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8b5cf6] rounded-full origin-center ${
+                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8b5cf6] rounded-full origin-left transition-transform duration-300 ease-out ${
                         isActive
-                          ? 'opacity-100 scale-x-100 animate-heartbeat-underline'
-                          : 'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:animate-heartbeat-underline'
+                          ? 'scale-x-100 opacity-100'
+                          : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
                       }`}
                     />
                   </>
