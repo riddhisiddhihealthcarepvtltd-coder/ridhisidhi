@@ -180,50 +180,55 @@ const Home = ({ onOpenAppointment }) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-6 relative mt-16 lg:mt-0 lg:pl-10"
+              className="lg:col-span-6 relative mt-10 lg:mt-0 lg:pl-10"
             >
-              <div className="relative rounded-[20px] overflow-hidden bg-gray-200 ml-auto w-full sm:w-[82%] lg:w-[76%] h-[320px] sm:h-[460px] lg:h-[520px]">
-                <SafeImage
-                  src={imageConfig.labTechnologist}
-                  alt="Healthcare Team"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+              {/* Self-contained wrapper — reserves space for overlapping elements on mobile */}
+              <div className="relative pb-[130px] sm:pb-[150px] lg:pb-0">
 
-              {/* 10 Years Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                whileHover={{ scale: 1.04 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="absolute -bottom-8 sm:-bottom-12 lg:-bottom-16 left-0 sm:left-4 lg:left-8 z-20 cursor-pointer"
-              >
-                <div className="bg-[#8b5cf6] text-white p-4 sm:p-7 lg:p-12 rounded-[12px] sm:rounded-[22px] sm:rounded-br-[80px] shadow-2xl flex items-center gap-3 sm:gap-5 lg:gap-6">
-                  <div className="font-sans font-bold text-white flex flex-col items-center">
-                    <span className="text-[42px] sm:text-[64px] lg:text-[76px] leading-[0.9]">
-                      <AnimatedCounter value={10} />
-                    </span>
-                    <span className="text-[14px] sm:text-[20px] lg:text-[22px] font-semibold mt-1 sm:mt-2">Years</span>
-                  </div>
-                  <div className="w-[1px] sm:w-[2px] h-12 sm:h-20 bg-white/40"></div>
-                  <div className="text-[12px] sm:text-[17px] lg:text-[19px] font-semibold leading-[1.35] tracking-wide">
-                    Already<br />Experienced In<br />Health Care
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Overlapping Smaller Image Card */}
-              <div className="absolute -bottom-6 sm:-bottom-10 right-0 sm:-right-4 lg:-right-8 w-[120px] sm:w-[160px] md:w-[220px] lg:w-[260px] aspect-square rounded-[12px] sm:rounded-[20px] bg-white p-1 sm:p-2 shadow-2xl z-40">
-                <div className="w-full h-full rounded-[8px] sm:rounded-[12px] overflow-hidden">
+                {/* Main doctor/lab image */}
+                <div className="relative rounded-[20px] overflow-hidden bg-gray-200 ml-auto w-full sm:w-[82%] lg:w-[76%] h-[340px] sm:h-[460px] lg:h-[520px]">
                   <SafeImage
-                    src={imageConfig.labTechnician}
-                    alt="Doctor with Patient"
+                    src={imageConfig.labTechnologist}
+                    alt="Healthcare Team"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-              </div>
 
+                {/* 10 Years Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  whileHover={{ scale: 1.04 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute bottom-0 left-0 sm:left-2 lg:-bottom-16 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
+                >
+                  <div className="bg-[#8b5cf6] text-white py-3.5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8 pr-[110px] sm:pr-[145px] md:pr-[175px] lg:pr-[210px] rounded-[16px] sm:rounded-[22px] sm:rounded-br-[80px] shadow-2xl flex items-center gap-3 sm:gap-4 lg:gap-6">
+                    <div className="font-sans font-bold text-white flex flex-col items-center shrink-0">
+                      <span className="text-[44px] sm:text-[58px] lg:text-[70px] leading-[0.9]">
+                        <AnimatedCounter value={10} />
+                      </span>
+                      <span className="text-[13px] sm:text-[18px] lg:text-[20px] font-semibold mt-1">Years</span>
+                    </div>
+                    <div className="w-[2px] h-12 sm:h-16 lg:h-20 bg-white/40 shrink-0"></div>
+                    <div className="text-[12px] sm:text-[15px] lg:text-[18px] font-semibold leading-[1.3] tracking-wide shrink-0 whitespace-nowrap">
+                      Already<br />Experienced In<br />Health Care
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Overlapping Smaller Image Card */}
+                <div className="absolute bottom-0 right-0 lg:-bottom-10 sm:-right-2 lg:-right-6 w-[120px] sm:w-[150px] md:w-[200px] lg:w-[240px] aspect-square rounded-[14px] sm:rounded-[20px] bg-white p-1.5 sm:p-2 shadow-2xl z-40">
+                  <div className="w-full h-full rounded-[10px] sm:rounded-[12px] overflow-hidden">
+                    <SafeImage
+                      src={imageConfig.labTechnician}
+                      alt="Doctor with Patient"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+
+              </div>
             </motion.div>
 
           </div>
