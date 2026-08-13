@@ -5,7 +5,7 @@ export const servicesData = [
     title: "ओ.पि.डि. सेवा (O.P.D.)",
     shortDesc: "Outpatient Department services providing expert consultations and personalized medical care for all patients.",
     fullDesc: "Our OPD service provides comprehensive outpatient medical consultations by qualified doctors. Patients can walk in for diagnosis, treatment advice, prescriptions, and follow-up care without requiring hospital admission.",
-    image: "/assets/restroom.jpeg",
+    image: "/assets/opd.jpeg",
     badge: "Primary Care",
     features: [
       "Walk-in patient consultations",
@@ -20,7 +20,7 @@ export const servicesData = [
     title: "प्याथोलोजी सेवा (Pathology)",
     shortDesc: "Accurate and reliable pathology testing for blood, urine, and other diagnostic specimens.",
     fullDesc: "Our pathology department handles all types of clinical laboratory tests with precision and care. From routine blood tests to specialized diagnostic panels, results are delivered promptly with high accuracy.",
-    image: "/assets/restroom.jpeg",
+    image: "/assets/pathologyroom.jpeg",
     badge: "Diagnostics",
     features: [
       "Blood & urine analysis",
@@ -35,7 +35,7 @@ export const servicesData = [
     title: "एक्स-रे सेवा (X-Ray)",
     shortDesc: "Modern X-ray imaging services for quick and accurate bone, chest, and internal organ diagnosis.",
     fullDesc: "We offer digital X-ray services for a wide range of diagnostic needs including chest X-rays, bone fractures, and joint assessments. Our X-ray unit operates with trained radiographers ensuring patient safety.",
-    image: "/assets/restroom.jpeg",
+    image: "/assets/xray.jpeg",
     badge: "Imaging",
     features: [
       "Digital chest & bone X-rays",
@@ -50,7 +50,7 @@ export const servicesData = [
     title: "आकस्मिक सेवा (Emergency)",
     shortDesc: "Immediate emergency medical care available for urgent health situations and critical cases.",
     fullDesc: "Our emergency service is equipped to handle urgent medical situations with prompt attention. Trained staff provide immediate first-aid, stabilization, and necessary referral for critical conditions.",
-    image: "/assets/restroom.jpeg",
+    image: "/assets/emergencyroom.jpeg",
     badge: "Emergency",
     features: [
       "Immediate patient stabilization",
@@ -80,7 +80,7 @@ export const servicesData = [
     title: "होम सर्भिस (Home Service)",
     shortDesc: "Convenient at-home medical services including sample collection, ECG, and nursing care.",
     fullDesc: "We bring quality healthcare to your doorstep. Our home service team provides sample collection, basic diagnostics, wound dressing, and nursing care for patients who cannot visit the clinic.",
-    image: "/assets/restroom.jpeg",
+    image: "/assets/homeservices.jpeg",
     badge: "Home Care",
     features: [
       "Home sample collection",
