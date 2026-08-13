@@ -3,8 +3,8 @@ import { Phone } from 'lucide-react';
 
 const Hero = ({ onOpenAppointment }) => {
   return (
-    <section className="relative w-full min-h-[calc(100vh-110px)] flex items-center py-4 sm:py-8 lg:py-10 bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] overflow-hidden">
-      <div className="container mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-16 xl:px-24 relative z-10 my-auto">
+    <section className="relative w-full py-2 sm:py-5 lg:py-6 bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] overflow-hidden">
+      <div className="container mx-auto max-w-[1400px] px-3 sm:px-6 lg:px-16 xl:px-24 relative z-10">
         <div className="grid grid-cols-2 gap-2 sm:gap-6 lg:gap-8 items-center">
 
           {/* Left Hero Content */}
