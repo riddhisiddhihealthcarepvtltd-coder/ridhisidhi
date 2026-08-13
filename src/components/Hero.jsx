@@ -14,14 +14,14 @@ const Hero = ({ onOpenAppointment }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <h1 className="text-[16px] xs:text-[22px] sm:text-[34px] md:text-[44px] lg:text-[50px] xl:text-[56px] font-poppins font-semibold text-black leading-[1.15] sm:leading-[1.1] tracking-normal sm:tracking-relaxed mb-2 sm:mb-5 select-text">
+              <h1 className="text-[16px] xs:text-[22px] sm:text-[34px] md:text-[44px] lg:text-[50px] xl:text-[56px] font-poppins font-bold text-black leading-[1.15] sm:leading-[1.1] tracking-normal sm:tracking-relaxed mb-2 sm:mb-5 select-text">
                 Expert Medical Care <br />
                 And Resources For A <br />
                 Healthier Life
               </h1>
 
               <p className="text-[10px] xs:text-[12px] sm:text-base text-[#374151] leading-tight sm:leading-relaxed mb-3 sm:mb-8 max-w-xl font-medium">
-                We provide trusted medical care, pharmacy, laboratory, and healthcare services with a focus on patient safety, professional guidance, and compassionate support for every individual and family.
+Trusted medical care, pharmacy, laboratory, and healthcare services—focused on safety, guidance, and compassionate care.
               </p>
 
               {/* Action Buttons */}
@@ -30,15 +30,15 @@ const Hero = ({ onOpenAppointment }) => {
                   onClick={onOpenAppointment}
                   className="px-3 py-2 sm:px-8 sm:py-3.5 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-semibold text-[11px] sm:text-[15px] transition-all duration-300 active:scale-95 shadow-md shadow-[#8b5cf6]/20"
                 >
-                  Get Started
+                  Book Appointment
                 </button>
 
                 <a
-                  href="tel:+1234567891123"
+                  href="tel:+9779851157228"
                   className="px-2.5 py-2 sm:px-8 sm:py-3.5 rounded-full bg-transparent hover:bg-[#8b5cf6]/5 border border-[#8b5cf6] text-[#8b5cf6] font-semibold text-[10px] sm:text-[15px] transition-all duration-300 flex items-center gap-1 sm:gap-2 active:scale-95"
                 >
                   <Phone className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
-                  <span>+(12)345-6789-1123</span>
+                  <span>+977-9851157228</span>
                 </a>
               </div>
             </motion.div>

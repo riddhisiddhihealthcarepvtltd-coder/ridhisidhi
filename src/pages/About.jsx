@@ -1,13 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, FileText, Target, Eye, Heart } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageTransition from '../components/PageTransition';
-import SectionHeader from '../components/SectionHeader';
+import { Eye, Heart, Target } from 'lucide-react';
 import CTA from '../components/CTA';
+import PageTransition from '../components/PageTransition';
 import SafeImage from '../components/SafeImage';
+import SEOHead from '../components/SEOHead';
 import { companyInfo, imageConfig } from '../data/company';
-import { leadershipNote } from '../data/team';
 
 // Simple animated counter for the badge
 const AnimatedCounter = ({ value, suffix = '' }) => <span>{value}{suffix}</span>;
@@ -37,7 +34,7 @@ const About = ({ onOpenAppointment }) => {
       </section>
 
       {/* Main About Overview */}
-      <section className="py-16 md:py-24 pb-28 md:pb-36 bg-white relative overflow-visible">
+      <section className="py-14 md:py-24 pb-28 md:pb-36 bg-white relative overflow-visible">
         <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -89,8 +86,8 @@ const About = ({ onOpenAppointment }) => {
               <div className="h-[1px] w-[90%] bg-[#8b5cf6]/30 my-8"></div>
 
               {/* Leadership Quote Card */}
-              <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 xl:gap-8 mb-8">
-                <div className="flex items-center gap-4 shrink-0">
+              <div className="flex flex-col gap-6 mb-8">
+                <div className="flex items-center gap-4">
                   <div className="w-[60px] h-[60px] rounded-full overflow-hidden border-2 border-[#8b5cf6]">
                     <SafeImage src={imageConfig.owner} alt="Dileep Kumar Mahaseth" className="w-full h-full object-cover object-top scale-125" />
                   </div>
@@ -99,8 +96,8 @@ const About = ({ onOpenAppointment }) => {
                     <p className="text-[13px] text-[#8b5cf6] font-medium">Chairman &amp; Registered Pharmacist (Owner)</p>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <p className="text-[#6b7280] italic text-[15px] font-serif leading-relaxed pr-4">
+                <div>
+                  <p className="text-[#6b7280] italic text-[15px] font-serif leading-relaxed">
                     "At Riddhi Siddhi Health Care, our daily effort is centered around trust, genuine care, and prompt service for every individual who walks through our doors."
                   </p>
                 </div>
@@ -113,17 +110,17 @@ const About = ({ onOpenAppointment }) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="relative mt-6 lg:mt-0 lg:pl-10"
+              className="relative mt-0 lg:pl-10"
             >
               {/* Self-contained wrapper — reserves space for overlapping elements on mobile */}
-              <div className="relative pb-[130px] sm:pb-[150px] lg:pb-0">
+              <div className="relative pb-[80px] sm:pb-[150px] lg:pb-0">
 
                 {/* Main owner image */}
-                <div className="relative rounded-[20px] overflow-hidden bg-white ml-auto w-full sm:w-[85%] lg:w-[80%] h-[340px] sm:h-[650px] lg:h-[800px]">
+                <div className="relative rounded-[20px] overflow-hidden bg-white ml-auto mt-5 sm:mt-0 w-full sm:w-[82%] lg:w-[76%] h-[340px] sm:h-[460px] lg:h-[600px]">
                   <SafeImage
                     src={imageConfig.owner}
                     alt="Riddhi Siddhi Health Care Owner"
-                    className="w-full h-full object-cover object-top scale-110 transform origin-top"
+                    className="w-full h-full object-cover object-top sm:object-top lg:object-center scale-150 lg:scale-125"
                   />
                 </div>
 
@@ -134,7 +131,7 @@ const About = ({ onOpenAppointment }) => {
                   whileHover={{ scale: 1.04 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="absolute bottom-0 left-0 sm:left-2 lg:bottom-14 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
+                  className="absolute -bottom-2 left-0 sm:bottom-0 sm:left-2 lg:-bottom-14 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
                 >
                   <div className="bg-[#8b5cf6] text-white py-3.5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8 pr-[110px] sm:pr-[145px] md:pr-[175px] lg:pr-[210px] rounded-[16px] sm:rounded-[22px] sm:rounded-br-[80px] shadow-2xl flex items-center gap-3 sm:gap-4 lg:gap-6">
                     <div className="font-sans font-bold text-white flex flex-col items-center shrink-0">
@@ -153,7 +150,7 @@ const About = ({ onOpenAppointment }) => {
                 </motion.div>
 
                 {/* Overlapping Smaller Image Card */}
-                <div className="absolute bottom-0 right-0 sm:-right-2 lg:bottom-12 lg:-right-6 w-[120px] sm:w-[150px] md:w-[200px] lg:w-[240px] aspect-square rounded-[14px] sm:rounded-[20px] bg-white p-1.5 sm:p-2 shadow-2xl z-40">
+                <div className="absolute bottom-0 right-0 sm:-right-2 lg:-bottom-10 lg:-right-6 w-[120px] sm:w-[150px] md:w-[200px] lg:w-[240px] aspect-square rounded-[14px] sm:rounded-[20px] bg-white p-1.5 sm:p-2 shadow-2xl z-40">
                   <div className="w-full h-full rounded-[10px] sm:rounded-[12px] overflow-hidden">
                     <SafeImage
                       src={imageConfig.labTechnician}

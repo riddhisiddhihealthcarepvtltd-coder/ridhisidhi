@@ -1,15 +1,15 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Award, Stethoscope, Users, Building2, Quote, Star } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
-import PageTransition from '../components/PageTransition';
-import Hero from '../components/Hero';
-import ServiceCard from '../components/ServiceCard';
+import { Award, Building2, Quote, Star, Stethoscope, Users } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import CTA from '../components/CTA';
+import Hero from '../components/Hero';
+import PageTransition from '../components/PageTransition';
 import SafeImage from '../components/SafeImage';
+import SEOHead from '../components/SEOHead';
+import ServiceCard from '../components/ServiceCard';
+import { imageConfig } from '../data/company';
 import { servicesData } from '../data/services';
-import { companyInfo, imageConfig } from '../data/company';
 
 const AnimatedCounter = ({ value, suffix = "", duration = 2 }) => {
   const [count, setCount] = useState(0);
@@ -183,10 +183,10 @@ const Home = ({ onOpenAppointment }) => {
               className="lg:col-span-6 relative mt-10 lg:mt-0 lg:pl-10"
             >
               {/* Self-contained wrapper — reserves space for overlapping elements on mobile */}
-              <div className="relative pb-[130px] sm:pb-[150px] lg:pb-0">
+              <div className="relative pb-[80px] sm:pb-[150px] lg:pb-0">
 
                 {/* Main doctor/lab image */}
-                <div className="relative rounded-[20px] overflow-hidden bg-gray-200 ml-auto w-full sm:w-[82%] lg:w-[76%] h-[340px] sm:h-[460px] lg:h-[520px]">
+                <div className="relative rounded-[20px] overflow-hidden bg-gray-200 ml-auto mt-5 sm:mt-0 w-full sm:w-[82%] lg:w-[76%] h-[340px] sm:h-[460px] lg:h-[520px]">
                   <SafeImage
                     src={imageConfig.labTechnologist}
                     alt="Healthcare Team"
@@ -201,7 +201,7 @@ const Home = ({ onOpenAppointment }) => {
                   whileHover={{ scale: 1.04 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="absolute bottom-0 left-0 sm:left-2 lg:-bottom-16 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
+                  className="absolute -bottom-2 left-0 sm:bottom-0 sm:left-2 lg:-bottom-16 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
                 >
                   <div className="bg-[#8b5cf6] text-white py-3.5 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-8 pr-[110px] sm:pr-[145px] md:pr-[175px] lg:pr-[210px] rounded-[16px] sm:rounded-[22px] sm:rounded-br-[80px] shadow-2xl flex items-center gap-3 sm:gap-4 lg:gap-6">
                     <div className="font-sans font-bold text-white flex flex-col items-center shrink-0">
@@ -218,7 +218,7 @@ const Home = ({ onOpenAppointment }) => {
                 </motion.div>
 
                 {/* Overlapping Smaller Image Card */}
-                <div className="absolute bottom-0 right-0 lg:-bottom-10 sm:-right-2 lg:-right-6 w-[120px] sm:w-[150px] md:w-[200px] lg:w-[240px] aspect-square rounded-[14px] sm:rounded-[20px] bg-white p-1.5 sm:p-2 shadow-2xl z-40">
+                <div className="absolute bottom-0 right-0 sm:-right-2 lg:-bottom-10 lg:-right-6 w-[120px] sm:w-[150px] md:w-[200px] lg:w-[240px] aspect-square rounded-[14px] sm:rounded-[20px] bg-white p-1.5 sm:p-2 shadow-2xl z-40">
                   <div className="w-full h-full rounded-[10px] sm:rounded-[12px] overflow-hidden">
                     <SafeImage
                       src={imageConfig.labTechnician}
