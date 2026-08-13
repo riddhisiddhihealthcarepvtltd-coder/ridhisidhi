@@ -3,12 +3,12 @@ import { Phone } from 'lucide-react';
 
 const Hero = ({ onOpenAppointment }) => {
   return (
-    <section className="relative w-full pt-5 pb-3 sm:pt-8 sm:pb-6 lg:pt-10 lg:pb-8 bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] overflow-hidden">
+    <section className="relative w-full pt-10 pb-4 sm:pt-14 sm:pb-6 lg:pt-6 xl:pt-8 lg:pb-8 bg-gradient-to-br from-[#f8f7fc] to-[#f1eff7] overflow-hidden">
       <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24 relative z-10">
         <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8 items-center">
 
           {/* Left Hero Content */}
-          <div className="w-full relative z-20">
+          <div className="w-full relative z-20 pl-3 sm:pl-0 lg:-mt-6 xl:-mt-8">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -21,9 +21,7 @@ const Hero = ({ onOpenAppointment }) => {
               </h1>
 
               <p className="text-[10px] xs:text-[12px] sm:text-base text-[#374151] leading-tight sm:leading-relaxed mb-3 sm:mb-8 max-w-xl font-medium">
-                Facilisis scelerisque commodo laoreet lacus felis dictum; nisl inceptos
-                nascetur. Ornare natoque nisi vel erat aliquet pulvinar. Non penatibus lectus
-                tempor; risus tellus aptent.
+                We provide trusted medical care, pharmacy, laboratory, and healthcare services with a focus on patient safety, professional guidance, and compassionate support for every individual and family.
               </p>
 
               {/* Action Buttons */}

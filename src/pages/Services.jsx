@@ -43,9 +43,20 @@ const Services = ({ onOpenAppointment }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="scroll-mt-32 border border-[#e9d5ff] rounded-2xl p-8 bg-white shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="scroll-mt-32 border border-[#e9d5ff] rounded-2xl bg-white shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden"
               >
-                <div>
+                {/* Service Image */}
+                {service.image && (
+                  <div className="w-full h-64 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                )}
+
+                <div className="p-8">
                   <div className="flex items-center justify-between gap-4 mb-6">
                     <div className="w-14 h-14 rounded-xl bg-[#f3e8ff] text-[#8b5cf6] flex items-center justify-center font-heading font-extrabold text-xl shadow-sm border border-[#8b5cf6]/20">
                       {service.number}
@@ -78,16 +89,16 @@ const Services = ({ onOpenAppointment }) => {
                       </ul>
                     </div>
                   )}
-                </div>
 
-                <div className="pt-4 border-t border-[#e9d5ff]">
-                  <button
-                    onClick={onOpenAppointment}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-heading font-bold text-xs shadow-sm transition-all duration-300 active:scale-95"
-                  >
-                    <span>Book Service</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  <div className="pt-4 border-t border-[#e9d5ff]">
+                    <button
+                      onClick={onOpenAppointment}
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-heading font-bold text-xs shadow-sm transition-all duration-300 active:scale-95"
+                    >
+                      <span>Book Service</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}

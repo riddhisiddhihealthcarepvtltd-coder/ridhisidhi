@@ -52,73 +52,14 @@ const Contact = ({ onOpenAppointment }) => {
               <ContactCard />
             </div>
 
-            {/* Right Column: Form Box in #1e1b4b Deeper Area */}
-            <div className="lg:col-span-7 bg-[#1e1b4b] rounded-2xl p-8 sm:p-10 shadow-xl border border-white/10 text-white">
-              <h3 className="font-heading font-extrabold text-2xl text-white mb-2">Send Us A Message</h3>
-              <p className="text-xs text-[#ddd6fe] mb-8">Fill out your information below and our clinic team will respond promptly.</p>
-
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input 
-                    type="text" 
-                    required
-                    placeholder="Full Name *"
-                    className="w-full bg-[#2e1065] border border-white/15 text-sm text-white placeholder:text-[#ddd6fe] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <input 
-                      type="email" 
-                      required
-                      placeholder="Your Email *"
-                      className="w-full bg-[#2e1065] border border-white/15 text-sm text-white placeholder:text-[#ddd6fe] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all"
-                    />
-                  </div>
-                  <div>
-                    <input 
-                      type="tel" 
-                      required
-                      placeholder="Phone / Subject *"
-                      className="w-full bg-[#2e1065] border border-white/15 text-sm text-white placeholder:text-[#ddd6fe] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <textarea 
-                    required
-                    rows={4}
-                    placeholder="Message *"
-                    className="w-full bg-[#2e1065] border border-white/15 text-sm text-white placeholder:text-[#ddd6fe] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#8b5cf6] focus:border-[#8b5cf6] transition-all resize-none"
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit" 
-                  disabled={formState !== 'idle'}
-                  className={`w-full py-3.5 rounded-xl font-heading font-extrabold text-xs uppercase tracking-wider text-white shadow-md transition-all flex items-center justify-center gap-2 ${
-                    formState === 'success' 
-                      ? 'bg-purple-600' 
-                      : 'bg-[#8b5cf6] hover:bg-[#7c3aed] active:scale-[0.98]'
-                  }`}
-                >
-                  {formState === 'idle' && (
-                    <>
-                      <span>SEND MESSAGE</span>
-                      <Send className="w-4 h-4" />
-                    </>
-                  )}
-                  {formState === 'submitting' && <span>SENDING...</span>}
-                  {formState === 'success' && (
-                    <>
-                      <CheckCircle2 className="w-4 h-4" />
-                      <span>MESSAGE SENT</span>
-                    </>
-                  )}
-                </button>
-              </form>
+            {/* Right Column: Shop Image */}
+            <div className="lg:col-span-7 rounded-2xl overflow-hidden shadow-xl border border-white/10 h-full min-h-[380px]">
+              <img
+                src="/assets/riddhisiddhishop.jpeg"
+                alt="Riddhi Siddhi Shop"
+                className="w-full h-full object-cover"
+                style={{ minHeight: '380px' }}
+              />
             </div>
 
           </div>

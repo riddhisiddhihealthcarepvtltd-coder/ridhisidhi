@@ -113,13 +113,13 @@ const About = ({ onOpenAppointment }) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="relative mt-16 lg:mt-0 lg:pl-10"
+              className="relative mt-6 lg:mt-0 lg:pl-10"
             >
-              <div className="relative rounded-[20px] overflow-hidden bg-white ml-auto w-full sm:w-[82%] lg:w-[76%] h-[320px] sm:h-[460px] lg:h-[520px]">
+              <div className="relative rounded-[20px] overflow-hidden bg-white ml-auto w-full sm:w-[85%] lg:w-[80%] h-[520px] sm:h-[650px] lg:h-[800px]">
                 <SafeImage
                   src={imageConfig.owner}
                   alt="Riddhi Siddhi Health Care Owner"
-                  className="w-full h-full object-cover object-top scale-125 -translate-y-8 transform origin-top"
+                  className="w-full h-full object-cover object-top scale-110 transform origin-top"
                 />
               </div>
 
@@ -130,24 +130,36 @@ const About = ({ onOpenAppointment }) => {
                 whileHover={{ scale: 1.04 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="absolute -bottom-8 sm:-bottom-12 lg:-bottom-16 left-0 sm:left-4 lg:left-8 z-20 cursor-pointer"
+                className="absolute bottom-14 sm:bottom-12 lg:bottom-14 left-0 sm:left-4 lg:left-8 z-20 cursor-pointer"
               >
                 <div className="bg-[#8b5cf6] text-white p-4 sm:p-7 lg:p-12 rounded-[12px] sm:rounded-[22px] sm:rounded-br-[80px] shadow-2xl flex items-center gap-3 sm:gap-5 lg:gap-6">
+
                   <div className="font-sans font-bold text-white flex flex-col items-center">
                     <span className="text-[42px] sm:text-[64px] lg:text-[76px] leading-[0.9]">
                       <AnimatedCounter value={10} />
                     </span>
-                    <span className="text-[14px] sm:text-[20px] lg:text-[22px] font-semibold mt-1 sm:mt-2">Years</span>
+
+                    <span className="text-[14px] sm:text-[20px] lg:text-[22px] font-semibold mt-1 sm:mt-2">
+                      Years
+                    </span>
                   </div>
+
                   <div className="w-[1px] sm:w-[2px] h-12 sm:h-20 bg-white/40"></div>
+
                   <div className="text-[12px] sm:text-[17px] lg:text-[19px] font-semibold leading-[1.35] tracking-wide">
-                    Already<br />Experienced In<br />Health Care
+                    Already
+                    <br />
+                    Experienced In
+                    <br />
+                    Health Care
                   </div>
+
                 </div>
               </motion.div>
 
               {/* Overlapping Smaller Image Card */}
-              <div className="absolute -bottom-6 sm:-bottom-10 right-0 sm:-right-4 lg:-right-8 w-[120px] sm:w-[160px] md:w-[220px] lg:w-[260px] aspect-square rounded-[12px] sm:rounded-[20px] bg-white p-1 sm:p-2 shadow-2xl z-40">
+              <div className="absolute bottom-12 sm:bottom-10 lg:bottom-12 right-0 sm:-right-4 lg:-right-8 w-[120px] sm:w-[160px] md:w-[220px] lg:w-[260px] aspect-square rounded-[12px] sm:rounded-[20px] bg-white p-1 sm:p-2 shadow-2xl z-40">
+
                 <div className="w-full h-full rounded-[8px] sm:rounded-[12px] overflow-hidden">
                   <SafeImage
                     src={imageConfig.labTechnician}
@@ -155,8 +167,8 @@ const About = ({ onOpenAppointment }) => {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-              </div>
 
+              </div>
             </motion.div>
 
           </div>

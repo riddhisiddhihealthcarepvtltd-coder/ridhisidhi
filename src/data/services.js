@@ -1,92 +1,92 @@
 export const servicesData = [
   {
-    id: "general-consultation",
+    id: "opd-service",
     number: "01",
-    title: "General Consultation",
-    shortDesc: "Comprehensive patient evaluation and personalized healthcare guidance for general health concerns.",
-    fullDesc: "Our general consultation service focuses on patient-centered health evaluations. We listen to your symptoms, review health concerns, and provide clear recommendations or referral pathways.",
-    icon: "Stethoscope",
+    title: "ओ.पि.डि. सेवा (O.P.D.)",
+    shortDesc: "Outpatient Department services providing expert consultations and personalized medical care for all patients.",
+    fullDesc: "Our OPD service provides comprehensive outpatient medical consultations by qualified doctors. Patients can walk in for diagnosis, treatment advice, prescriptions, and follow-up care without requiring hospital admission.",
+    image: "/assets/restroom.jpeg",
     badge: "Primary Care",
     features: [
-      "Patient-centered evaluation",
-      "Vital signs monitoring",
-      "Preventive health counseling",
-      "Symptom diagnosis & guidance"
+      "Walk-in patient consultations",
+      "Expert medical diagnosis",
+      "Prescription & treatment planning",
+      "Follow-up care & monitoring"
     ]
   },
   {
-    id: "pharmacy-support",
+    id: "pathology-service",
     number: "02",
-    title: "Pharmacy Support",
-    shortDesc: "Reliable distribution of genuine essential medicines, prescription guidance, and pharmaceutical support.",
-    fullDesc: "Managed with professional pharmaceutical expertise, our pharmacy support ensures accurate medication dispensing, usage counseling, and safe storage of healthcare supplies.",
-    icon: "Pill",
-    badge: "Essential Care",
-    features: [
-      "Genuine medication dispensing",
-      "Prescription review & dosage counseling",
-      "Over-the-counter health essentials",
-      "Storage & expiry quality assurance"
-    ]
-  },
-  {
-    id: "laboratory-support",
-    number: "03",
-    title: "Laboratory Support",
-    shortDesc: "Quality-focused diagnostic lab sample collection, accurate diagnostic testing, and prompt report handling.",
-    fullDesc: "Our clinical laboratory support team adheres to quality standards for specimen handling and diagnostic testing, ensuring accurate and reliable health reporting for patients.",
-    icon: "TestTube",
+    title: "प्याथोलोजी सेवा (Pathology)",
+    shortDesc: "Accurate and reliable pathology testing for blood, urine, and other diagnostic specimens.",
+    fullDesc: "Our pathology department handles all types of clinical laboratory tests with precision and care. From routine blood tests to specialized diagnostic panels, results are delivered promptly with high accuracy.",
+    image: "/assets/restroom.jpeg",
     badge: "Diagnostics",
     features: [
-      "Blood & specimen collection",
-      "Routine diagnostic health panels",
-      "Hygiene-focused lab procedures",
-      "Clear & timely test reporting"
+      "Blood & urine analysis",
+      "Routine diagnostic panels",
+      "Hygienic specimen collection",
+      "Timely & accurate reporting"
     ]
   },
   {
-    id: "health-checkup",
+    id: "xray-service",
+    number: "03",
+    title: "एक्स-रे सेवा (X-Ray)",
+    shortDesc: "Modern X-ray imaging services for quick and accurate bone, chest, and internal organ diagnosis.",
+    fullDesc: "We offer digital X-ray services for a wide range of diagnostic needs including chest X-rays, bone fractures, and joint assessments. Our X-ray unit operates with trained radiographers ensuring patient safety.",
+    image: "/assets/restroom.jpeg",
+    badge: "Imaging",
+    features: [
+      "Digital chest & bone X-rays",
+      "Safe low-radiation imaging",
+      "Trained radiography staff",
+      "Rapid diagnostic reporting"
+    ]
+  },
+  {
+    id: "emergency-service",
     number: "04",
-    title: "Health Checkup & Screening",
-    shortDesc: "Routine wellness screening to detect potential health issues early and maintain daily physical well-being.",
-    fullDesc: "Regular screening is vital for long-term health. We offer routine health checkup protocols designed to assess vital parameters and promote proactive preventive care.",
-    icon: "Activity",
-    badge: "Wellness",
+    title: "आकस्मिक सेवा (Emergency)",
+    shortDesc: "Immediate emergency medical care available for urgent health situations and critical cases.",
+    fullDesc: "Our emergency service is equipped to handle urgent medical situations with prompt attention. Trained staff provide immediate first-aid, stabilization, and necessary referral for critical conditions.",
+    image: "/assets/restroom.jpeg",
+    badge: "Emergency",
     features: [
-      "Blood pressure & glucose screening",
-      "Routine body wellness checks",
-      "Health risk assessment",
-      "Preventive lifestyle guidance"
+      "Immediate patient stabilization",
+      "First-aid & wound care",
+      "Urgent case management",
+      "Critical referral support"
     ]
   },
   {
-    id: "family-healthcare",
+    id: "ecg-service",
     number: "05",
-    title: "Family Healthcare Guidance",
-    shortDesc: "Dedicated medical support tailored for family members across all age groups in the local community.",
-    fullDesc: "We provide accessible healthcare assistance for families in Gokarneshwor-5 and surrounding areas, ensuring friendly, respectful, and continuous care for patients.",
-    icon: "Users",
-    badge: "Community Care",
+    title: "ई.सि.जी. सेवा (E.C.G.)",
+    shortDesc: "Electrocardiogram (ECG) testing for accurate heart rhythm and cardiac health assessment.",
+    fullDesc: "Our ECG service provides rapid electrocardiogram testing to evaluate heart health, detect arrhythmias, and assess cardiac conditions. Results are reviewed by experienced medical professionals.",
+    image: "/assets/restroom.jpeg",
+    badge: "Cardiac Care",
     features: [
-      "All-age family consultation",
-      "Chronic condition advice",
-      "Elderly patient guidance",
-      "Community healthcare access"
+      "12-lead ECG testing",
+      "Heart rhythm analysis",
+      "Arrhythmia detection",
+      "Cardiologist-reviewed reports"
     ]
   },
   {
-    id: "patient-support",
+    id: "home-service",
     number: "06",
-    title: "Patient Support & Guidance",
-    shortDesc: "Clear medical instructions, follow-up advice, and direct assistance for ongoing patient recovery.",
-    fullDesc: "Our team prioritizes patient understanding. We help patients navigate their treatment plans with clear instructions, medication reminders, and direct contact options.",
-    icon: "HeartPulse",
-    badge: "Continuous Care",
+    title: "होम सर्भिस (Home Service)",
+    shortDesc: "Convenient at-home medical services including sample collection, ECG, and nursing care.",
+    fullDesc: "We bring quality healthcare to your doorstep. Our home service team provides sample collection, basic diagnostics, wound dressing, and nursing care for patients who cannot visit the clinic.",
+    image: "/assets/restroom.jpeg",
+    badge: "Home Care",
     features: [
-      "Post-consultation follow-up advice",
-      "Medication instruction clarification",
-      "Direct telephone & WhatsApp inquiry",
-      "Empathetic & supportive assistance"
+      "Home sample collection",
+      "At-home nursing care",
+      "Wound dressing & IV therapy",
+      "Elderly & bedridden patient care"
     ]
   }
 ];
@@ -100,25 +100,25 @@ export const quickActions = [
     link: "/contact"
   },
   {
-    title: "General Consultation",
+    title: "OPD Consultation",
     description: "Get evaluated by trained healthcare professionals in a comfortable setting.",
     icon: "UserCheck",
     actionText: "Learn More",
-    link: "/services#general-consultation"
+    link: "/services#opd-service"
   },
   {
-    title: "Pharmacy Services",
-    description: "Dispensing genuine medicines with expert pharmacist guidance.",
-    icon: "Pill",
-    actionText: "Explore Pharmacy",
-    link: "/services#pharmacy-support"
-  },
-  {
-    title: "Laboratory Testing",
+    title: "Pathology Testing",
     description: "Accurate specimen testing and reliable lab reporting support.",
     icon: "FlaskConical",
     actionText: "Lab Details",
-    link: "/services#laboratory-support"
+    link: "/services#pathology-service"
+  },
+  {
+    title: "Home Service",
+    description: "We bring quality healthcare directly to your home for your convenience.",
+    icon: "Home",
+    actionText: "Home Care",
+    link: "/services#home-service"
   },
   {
     title: "Direct Contact",

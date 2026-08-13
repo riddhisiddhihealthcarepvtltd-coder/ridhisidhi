@@ -71,8 +71,7 @@ const Navbar = ({ onOpenAppointment }) => {
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative py-1.5 font-semibold text-[15px] transition-colors duration-200 group flex items-center gap-1.5 ${
-                    isActive ? 'text-[#8b5cf6]' : 'text-[#111827] hover:text-[#8b5cf6]'
+                  `relative py-1.5 font-semibold text-[15px] transition-colors duration-200 group flex items-center gap-1.5 ${isActive ? 'text-[#8b5cf6]' : 'text-[#111827] hover:text-[#8b5cf6]'
                   }`
                 }
               >
@@ -82,11 +81,10 @@ const Navbar = ({ onOpenAppointment }) => {
 
                     {/* Smooth Slide Underline */}
                     <span
-                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8b5cf6] rounded-full origin-left transition-transform duration-300 ease-out ${
-                        isActive
+                      className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8b5cf6] rounded-full origin-left transition-transform duration-300 ease-out ${isActive
                           ? 'scale-x-100 opacity-100'
                           : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
-                      }`}
+                        }`}
                     />
                   </>
                 )}
