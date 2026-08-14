@@ -52,6 +52,9 @@ const Navbar = ({ onOpenAppointment }) => {
             <img
               src="/assets/logo.png"
               alt="Riddhi Siddhi Health Care Logo"
+              width="56"
+              height="56"
+              decoding="async"
               className="h-11 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">

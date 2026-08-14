@@ -108,6 +108,10 @@ const Hero = ({ onOpenAppointment }) => {
               <img
                 src="/assets/male-doctorbg.png"
                 alt="Expert Doctor"
+                width="500"
+                height="500"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto max-h-[220px] xs:max-h-[280px] sm:max-h-[480px] lg:max-h-[520px] object-contain relative z-10 mx-auto"
               />
 

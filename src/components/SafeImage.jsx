@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { User, Image as ImageIcon } from 'lucide-react';
 import { imageConfig } from '../data/company';
 
-const SafeImage = ({ src, alt, className = "", isAvatar = false, fallbackSrc }) => {
+const SafeImage = ({ src, alt, className = "", isAvatar = false, fallbackSrc, priority = false }) => {
   const [error, setError] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -35,7 +35,8 @@ const SafeImage = ({ src, alt, className = "", isAvatar = false, fallbackSrc }) 
       className={`${className} transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
       onLoad={() => setLoaded(true)}
       onError={handleError}
-      loading="lazy"
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
     />
   );
 };

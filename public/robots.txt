@@ -1,0 +1,6 @@
+# robots.txt for https://riddhisiddhihealthcare.com.np
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://riddhisiddhihealthcare.com.np/sitemap.xml
