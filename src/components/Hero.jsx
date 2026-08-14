@@ -9,38 +9,65 @@ const Hero = ({ onOpenAppointment }) => {
 
           {/* Left Hero Content */}
           <div className="w-full relative z-20 pl-3 sm:pl-0 lg:-mt-6 xl:-mt-8">
+            <h1 className="text-[16px] text-[#001847] xs:text-[22px] sm:text-[34px] md:text-[44px] lg:text-[50px] xl:text-[56px] font-poppins font-bold leading-[1.15] sm:leading-[1.1] tracking-normal sm:tracking-relaxed mb-2 sm:mb-5 select-text">
+              <motion.span
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="inline-block"
+              >
+                Expert Medical Care
+              </motion.span>
+              <br />
+              <motion.span
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                className="inline-block"
+              >
+                And Resources For A
+              </motion.span>
+              <br />
+              <motion.span
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+                className="inline-block bg-gradient-to-r from-[#8b5cf6] via-[#7c3aed] to-[#6d28d9] bg-clip-text text-transparent"
+              >
+                Healthier Life
+              </motion.span>
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+              className="text-[10px] xs:text-[12px] sm:text-base text-[#374151] leading-tight sm:leading-relaxed mb-3 sm:mb-8 max-w-xl font-medium"
+            >
+              Trusted medical care, pharmacy, laboratory, and healthcare services, focused on safety, guidance, and compassionate care.
+            </motion.p>
+
+            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.65 }}
+              className="flex flex-wrap items-center gap-2 sm:gap-4"
             >
-              <h1 className="text-[16px] xs:text-[22px] sm:text-[34px] md:text-[44px] lg:text-[50px] xl:text-[56px] font-poppins font-bold text-black leading-[1.15] sm:leading-[1.1] tracking-normal sm:tracking-relaxed mb-2 sm:mb-5 select-text">
-                Expert Medical Care <br />
-                And Resources For A <br />
-                Healthier Life
-              </h1>
+              <button
+                onClick={onOpenAppointment}
+                className="px-3 py-2 sm:px-8 sm:py-3.5 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-semibold text-[11px] sm:text-[15px] transition-all duration-300 active:scale-95 shadow-md shadow-[#8b5cf6]/20 hover:animate-pulse-ring"
+              >
+                Book Appointment
+              </button>
 
-              <p className="text-[10px] xs:text-[12px] sm:text-base text-[#374151] leading-tight sm:leading-relaxed mb-3 sm:mb-8 max-w-xl font-medium">
-Trusted medical care, pharmacy, laboratory, and healthcare services—focused on safety, guidance, and compassionate care.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4">
-                <button
-                  onClick={onOpenAppointment}
-                  className="px-3 py-2 sm:px-8 sm:py-3.5 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-semibold text-[11px] sm:text-[15px] transition-all duration-300 active:scale-95 shadow-md shadow-[#8b5cf6]/20"
-                >
-                  Book Appointment
-                </button>
-
-                <a
-                  href="tel:+9779851157228"
-                  className="px-2.5 py-2 sm:px-8 sm:py-3.5 rounded-full bg-transparent hover:bg-[#8b5cf6]/5 border border-[#8b5cf6] text-[#8b5cf6] font-semibold text-[10px] sm:text-[15px] transition-all duration-300 flex items-center gap-1 sm:gap-2 active:scale-95"
-                >
-                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
-                  <span>+977-9851157228</span>
-                </a>
-              </div>
+              <a
+                href="tel:+9779851157228"
+                className="px-2.5 py-2 sm:px-8 sm:py-3.5 rounded-full bg-transparent hover:bg-[#8b5cf6] border border-[#8b5cf6] text-[#8b5cf6] hover:text-white font-semibold text-[10px] sm:text-[15px] transition-all duration-300 flex items-center gap-1 sm:gap-2 active:scale-95 shadow-xs hover:shadow-md"
+              >
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
+                <span>+977-9851157228</span>
+              </a>
             </motion.div>
           </div>
 
@@ -104,8 +131,8 @@ Trusted medical care, pharmacy, laboratory, and healthcare services—focused on
                     </h4>
 
                   </div>
-                  <p className="text-[8px] xs:text-[9px] sm:text-[13px] text-white/90 leading-snug">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <p className="text-[8px] xs:text-[9px] sm:text-[13px] text-white leading-snug">
+                    Professional care you can trust, always.
                   </p>
                 </div>
               </motion.div>

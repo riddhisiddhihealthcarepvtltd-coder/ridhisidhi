@@ -56,6 +56,10 @@ export default {
       },
       borderRadius: {
         'brand': '16px',
+      },
+      fontFamily: {
+        sans: ['"Public Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Manrope', 'sans-serif'],
       }
     },
   },

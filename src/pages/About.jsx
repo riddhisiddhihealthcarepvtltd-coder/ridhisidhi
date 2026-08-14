@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Eye, Heart, Target } from 'lucide-react';
-import CTA from '../components/CTA';
+
 import PageTransition from '../components/PageTransition';
 import SafeImage from '../components/SafeImage';
 import SEOHead from '../components/SEOHead';
@@ -43,7 +43,7 @@ const About = ({ onOpenAppointment }) => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
-              className="space-y-7"
+              className="space-y-7 px-3.5 sm:px-0"
             >
               <div className="font-sans font-semibold text-[#8b5cf6] tracking-widest uppercase text-[13px] mb-2">
                 ABOUT OUR LEADERSHIP
@@ -128,7 +128,7 @@ const About = ({ onOpenAppointment }) => {
                 <motion.div
                   initial={{ opacity: 0, y: 20, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  whileHover={{ scale: 1.04 }}
+                  whileHover={{ scale: 1.04, transition: { duration: 0.15, ease: "easeOut" } }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                   className="absolute -bottom-2 left-0 sm:bottom-0 sm:left-2 lg:-bottom-14 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
@@ -179,8 +179,12 @@ const About = ({ onOpenAppointment }) => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-2xl border border-[#e9d5ff] shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-3.5 sm:px-0">
+            <motion.div
+              whileHover={{ y: -6, scale: 1.03 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="bg-white p-6 rounded-2xl border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
               <div className="w-12 h-12 bg-[#f3e8ff] rounded-xl flex items-center justify-center mb-5">
                 <Target className="w-6 h-6 text-[#8b5cf6]" />
               </div>
@@ -188,9 +192,13 @@ const About = ({ onOpenAppointment }) => {
               <p className="text-[#647b80] leading-relaxed text-xs sm:text-sm">
                 To provide comprehensive, reliable, and accessible healthcare solutions, including medical consultation, pharmacy, and laboratory services, with an unwavering focus on patient well-being and clinical accuracy.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-2xl border border-[#e9d5ff] shadow-sm">
+            <motion.div
+              whileHover={{ y: -6, scale: 1.03 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="bg-white p-6 rounded-2xl border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
               <div className="w-12 h-12 bg-[#f3e8ff] rounded-xl flex items-center justify-center mb-5">
                 <Eye className="w-6 h-6 text-[#8b5cf6]" />
               </div>
@@ -198,9 +206,13 @@ const About = ({ onOpenAppointment }) => {
               <p className="text-[#647b80] leading-relaxed text-xs sm:text-sm">
                 To become the most trusted and preferred local healthcare destination in Gokarneshwor, recognized for our ethical practices, professional integrity, and compassionate patient relationships.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-2xl border border-[#e9d5ff] shadow-sm">
+            <motion.div
+              whileHover={{ y: -6, scale: 1.03 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="bg-white p-6 rounded-2xl border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+            >
               <div className="w-12 h-12 bg-[#f3e8ff] rounded-xl flex items-center justify-center mb-5">
                 <Heart className="w-6 h-6 text-[#8b5cf6]" />
               </div>
@@ -211,12 +223,11 @@ const About = ({ onOpenAppointment }) => {
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#8b5cf6] rounded-full"></span> Quality Excellence</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#8b5cf6] rounded-full"></span> Compassion & Safety</li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <CTA onOpenAppointment={onOpenAppointment} />
     </PageTransition>
   );
 };

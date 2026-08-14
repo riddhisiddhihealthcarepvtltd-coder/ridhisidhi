@@ -15,7 +15,7 @@ const ServiceCard = ({ service, index = 0, onOpenAppointment }) => {
   const IconComponent = iconMap[service.icon] || Stethoscope;
 
   return (
-    <div className="bg-white rounded-2xl p-6 border border-[#e9d5ff] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl p-6 border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] flex flex-col justify-between group cursor-pointer">
       <div>
         {/* Soft Sky Circular Icon Accent Area */}
         <div className="w-14 h-14 rounded-xl bg-[#f3e8ff] text-[#8b5cf6] flex items-center justify-center mb-5 group-hover:bg-[#8b5cf6] group-hover:text-white transition-colors duration-300">

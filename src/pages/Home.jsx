@@ -109,10 +109,8 @@ const Home = ({ onOpenAppointment }) => {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-semibold text-[#202020] leading-[1.15] mb-6">
                 Providing Exceptional<br />Healthcare for All
               </h2>
-              <p className="text-[#6b7280] text-[15px] leading-relaxed mb-8 max-w-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae commodo
-                ipsum, eu ullamcorper magna. Nam non posuere lacus, eget viverra massa.
-                Sed magna ligula, lacinia sit amet bibendum eu, porta nec ante.
+              <p className=" text-[15px] leading-relaxed mb-8 max-w-lg">
+                We are committed to providing compassionate, reliable, and high-quality healthcare for every patient. Our experienced medical team focuses on understanding each patient's needs and delivering personalized care in a safe and welcoming environment.
               </p>
 
               {/* 2-Column Checklist */}
@@ -146,20 +144,20 @@ const Home = ({ onOpenAppointment }) => {
               <div className="h-[1px] w-[90%] bg-[#8b5cf6]/30 my-8"></div>
 
               {/* Testimonial / Quote */}
-              <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 xl:gap-8 mb-8">
+              <div className="flex flex-col gap-3.5 mb-8">
                 <div className="flex items-center gap-4 shrink-0">
-                  <div className="w-[60px] h-[60px] rounded-full overflow-hidden border-2 border-transparent">
+                  <div className="w-[56px] h-[56px] rounded-full overflow-hidden border-2 border-transparent">
                     <SafeImage src={imageConfig.chairman} alt="Emma Stone" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-sans font-bold text-[17px] text-[#202020] mb-0.5">Emma Stone</h4>
-                    <p className="text-[13px] text-[#6b7280]">General Practitioner</p>
+                    <p className="text-[13px] text-[#000000]">General Practitioner</p>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <p className="text-[#6b7280] italic text-[15px] font-serif leading-relaxed pr-4">
-                    "Fusce vitae commodo ipsum, eu ullam<br className="hidden sm:block" />
-                    corper magna nam non posuere."
+                <div>
+                  <p className="text-[#000000] italic text-[15px] font-serif leading-relaxed pr-4 pt-1">
+                    "तपाईंको स्वास्थ्य हाम्रो प्राथमिकता हो। तपाईंको स्वास्थ्य यात्राको हरेक चरणमा हामी
+                    विश्वसनीय उपचार, सहयोग र आवश्यक हेरचाह प्रदान गर्न सधैं प्रतिबद्ध छौं।"
                   </p>
                 </div>
               </div>
@@ -198,7 +196,7 @@ const Home = ({ onOpenAppointment }) => {
                 <motion.div
                   initial={{ opacity: 0, y: 20, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  whileHover={{ scale: 1.04 }}
+                  whileHover={{ scale: 1.04, transition: { duration: 0.15, ease: "easeOut" } }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                   className="absolute -bottom-2 left-0 sm:bottom-0 sm:left-2 lg:-bottom-16 lg:left-0 z-20 cursor-pointer max-w-[calc(100%-80px)] sm:max-w-none"
@@ -309,8 +307,10 @@ const Home = ({ onOpenAppointment }) => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6, scale: 1.02 }}
               viewport={{ once: true }}
-              className="bg-white p-8 sm:p-10 rounded-2xl border border-[#e9d5ff] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="bg-white p-8 sm:p-10 rounded-2xl border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div className="flex items-center gap-1 text-[#8b5cf6] mb-4">
@@ -345,9 +345,10 @@ const Home = ({ onOpenAppointment }) => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -6, scale: 1.02 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white p-8 sm:p-10 rounded-2xl border border-[#e9d5ff] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
+              className="bg-white p-8 sm:p-10 rounded-2xl border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div className="flex items-center gap-1 text-[#8b5cf6] mb-4">

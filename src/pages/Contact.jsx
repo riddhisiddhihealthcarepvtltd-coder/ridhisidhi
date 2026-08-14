@@ -49,7 +49,7 @@ const Contact = ({ onOpenAppointment }) => {
       {/* Contact Section */}
       <section className="py-16 md:py-24 bg-[#2e1065] text-white relative">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start px-3.5 sm:px-0">
 
             {/* Left Column: Contact Card */}
             <div className="lg:col-span-5">

@@ -6,7 +6,6 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import CallButton from './components/CallButton';
 import ScrollToTop from './components/ScrollToTop';
 import AppointmentModal from './components/AppointmentModal';
 
@@ -43,7 +42,6 @@ function App() {
 
         <Footer onOpenAppointment={handleOpenAppointment} />
         <WhatsAppButton onOpenAppointment={handleOpenAppointment} />
-        <CallButton />
 
         <AppointmentModal 
           isOpen={isAppointmentOpen} 

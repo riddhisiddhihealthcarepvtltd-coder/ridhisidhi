@@ -19,10 +19,10 @@ const Navbar = ({ onOpenAppointment }) => {
     <>
       {/* Top Header Bar - Scrolling Ticker */}
       <div className="w-full bg-[#8b5cf6] text-white text-xs sm:text-sm py-2.5 font-medium tracking-wide overflow-hidden">
-        <div className="flex whitespace-nowrap animate-ticker">
+        <div className="flex w-max whitespace-nowrap animate-ticker">
           {/* Repeated twice for seamless loop */}
-          {[0, 1].map((i) => (
-            <div key={i} className="flex items-center shrink-0 gap-10 px-6">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="flex items-center shrink-0 gap-12 px-8 tracking-widest">
               <span className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 shrink-0" />
                 <span>{companyInfo.phone} / {companyInfo.mobile}</span>
@@ -30,7 +30,7 @@ const Navbar = ({ onOpenAppointment }) => {
               <span className="text-white/40">•</span>
               <span className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 shrink-0" />
-                <span>{companyInfo.email}</span>
+                <span className="font-sans tracking-widest">{companyInfo.email}</span>
               </span>
               <span className="text-white/40">•</span>
               <span className="flex items-center gap-2">
@@ -55,7 +55,7 @@ const Navbar = ({ onOpenAppointment }) => {
               className="h-11 sm:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className="font-heading font-extrabold text-base sm:text-xl text-[#111827] leading-tight tracking-tight">
+              <span className="font-sans font-bold text-base sm:text-xl text-[#111827] leading-tight tracking-wide">
                 Riddhi Siddhi
               </span>
               <span className="text-[10px] sm:text-xs text-[#8b5cf6] font-bold tracking-wider uppercase">
@@ -71,7 +71,7 @@ const Navbar = ({ onOpenAppointment }) => {
                 key={link.name}
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative py-1.5 font-semibold text-[15px] transition-colors duration-200 group flex items-center gap-1.5 ${isActive ? 'text-[#8b5cf6]' : 'text-[#111827] hover:text-[#8b5cf6]'
+                  `relative py-1.5 font-semibold text-[15px] tracking-wide transition-colors duration-200 group flex items-center gap-1.5 ${isActive ? 'text-[#8b5cf6]' : 'text-[#111827] hover:text-[#8b5cf6]'
                   }`
                 }
               >
@@ -82,8 +82,8 @@ const Navbar = ({ onOpenAppointment }) => {
                     {/* Smooth Slide Underline */}
                     <span
                       className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#8b5cf6] rounded-full origin-left transition-transform duration-300 ease-out ${isActive
-                          ? 'scale-x-100 opacity-100'
-                          : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
+                        ? 'scale-x-100 opacity-100'
+                        : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
                         }`}
                     />
                   </>

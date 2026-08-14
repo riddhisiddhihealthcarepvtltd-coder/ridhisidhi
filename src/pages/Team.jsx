@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import PageTransition from '../components/PageTransition';
 import SectionHeader from '../components/SectionHeader';
 import TeamCard from '../components/TeamCard';
-import CTA from '../components/CTA';
+
 import { teamMembers } from '../data/team';
 
 const Team = ({ onOpenAppointment }) => {
@@ -56,7 +56,7 @@ const Team = ({ onOpenAppointment }) => {
             className="mb-16"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto px-3.5 sm:px-0">
             {teamMembers.map((member, index) => (
               <TeamCard key={member.id} member={member} index={index} />
             ))}
@@ -64,11 +64,6 @@ const Team = ({ onOpenAppointment }) => {
         </div>
       </section>
 
-      <CTA 
-        title="Consult With Our Professionals" 
-        subtitle="Schedule a meeting with our medical consultants or pharmacists today for proper healthcare guidance." 
-        onOpenAppointment={onOpenAppointment}
-      />
     </PageTransition>
   );
 };

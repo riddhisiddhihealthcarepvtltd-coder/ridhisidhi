@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Stethoscope } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import PageTransition from '../components/PageTransition';
-import CTA from '../components/CTA';
+
 import { servicesData, quickActions } from '../data/services';
 import { companyInfo } from '../data/company';
 
@@ -34,7 +34,7 @@ const Services = ({ onOpenAppointment }) => {
       {/* Full Detailed Services Grid */}
       <section className="py-16 md:py-24 bg-white relative">
         <div className="container mx-auto max-w-[1400px] px-4 lg:px-16 xl:px-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 px-3.5 sm:px-0">
             {servicesData.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -43,7 +43,7 @@ const Services = ({ onOpenAppointment }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="scroll-mt-32 border border-[#e9d5ff] rounded-2xl bg-white shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden"
+                className="scroll-mt-32 border border-[#e9d5ff] hover:border-[#6d28d9] rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 {/* Service Image */}
                 {service.image && (
@@ -118,29 +118,31 @@ const Services = ({ onOpenAppointment }) => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-3.5 sm:px-0">
             {quickActions.slice(0, 4).map((action, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-[#e9d5ff] shadow-sm">
-                <h4 className="font-heading font-extrabold text-base text-[#111827] mb-2">{action.title}</h4>
-                <p className="text-xs text-[#6b7280] mb-4 leading-relaxed">{action.description}</p>
+              <motion.div
+                key={idx}
+                whileHover={{ y: -6, scale: 1.03 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="bg-white p-6 rounded-2xl border border-[#e9d5ff] hover:border-[#6d28d9] shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+              >
+                <div>
+                  <h4 className="font-heading font-extrabold text-base text-[#111827] mb-2">{action.title}</h4>
+                  <p className="text-xs text-[#6b7280] mb-4 leading-relaxed">{action.description}</p>
+                </div>
                 <button
                   onClick={onOpenAppointment}
-                  className="text-xs font-bold text-[#8b5cf6] hover:text-[#7c3aed] flex items-center gap-1 transition-colors"
+                  className="text-xs font-bold text-[#8b5cf6] hover:text-[#7c3aed] flex items-center gap-1 transition-colors pt-2"
                 >
                   <span>{action.actionText}</span>
                   <ArrowRight className="w-3 h-3" />
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <CTA 
-        title="Need Healthcare Support Today?" 
-        subtitle={`Reach out to ${companyInfo.name} for immediate guidance or to schedule a consultation at our facility.`} 
-        onOpenAppointment={onOpenAppointment}
-      />
     </PageTransition>
   );
 };

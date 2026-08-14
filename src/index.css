@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,23 +16,51 @@
   --footer-bg: #1e1b4b;
   --footer-dark: #2e1065;
   --footer-text: #ddd6fe;
+  --body-font: 'Public Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ticker-duration: 28s;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --ticker-duration: 40s;
+  }
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--body-font);
     color: var(--ink);
     background-color: var(--paper);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  body {
+    font-family: var(--body-font);
+  }
+
+  /* 
+  p {
+    font-family: var(--body-font) !important;
+    font-size: 16px !important;
+    line-height: 1.625 !important;
+    font-weight: 400 !important;
+    color: #3F4940;
+    letter-spacing: normal !important;
+  } */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Manrope', sans-serif;
     color: var(--ink);
   }
 }
 
 @layer components {
+
   /* Button Styles adhering strictly to specifications */
   .btn-primary {
     @apply bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-heading font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-[#8b5cf6]/20 active:scale-95;
@@ -61,22 +91,27 @@
     transform: scaleX(0);
     opacity: 0.3;
   }
+
   25% {
     transform: scaleX(1);
     opacity: 1;
   }
+
   45% {
     transform: scaleX(0.6);
     opacity: 0.85;
   }
+
   70% {
     transform: scaleX(1.08);
     opacity: 1;
   }
+
   85% {
     transform: scaleX(0.9);
     opacity: 0.95;
   }
+
   100% {
     transform: scaleX(1);
     opacity: 1;
@@ -85,11 +120,52 @@
 
 @layer utilities {
   .animate-ticker {
-    animation: ticker-scroll 28s linear infinite;
+    animation: ticker-scroll var(--ticker-duration) linear infinite;
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-pulse-ring-white {
+    animation: pulse-ring-white 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+@keyframes pulse-ring-white {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 
 @keyframes ticker-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
