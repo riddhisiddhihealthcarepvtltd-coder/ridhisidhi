@@ -9,30 +9,26 @@ const Hero = ({ onOpenAppointment }) => {
 
           {/* Left Hero Content */}
           <div className="w-full relative z-20 pl-3 sm:pl-0 lg:-mt-6 xl:-mt-8">
-            <h1 className="text-[16px] text-[#001847] xs:text-[22px] sm:text-[34px] md:text-[44px] lg:text-[50px] xl:text-[56px] font-poppins font-bold leading-[1.15] sm:leading-[1.1] tracking-normal sm:tracking-relaxed mb-2 sm:mb-5 select-text">
+            <h1 className="text-[#001847] font-poppins font-bold leading-[1.15] sm:leading-[1.1] tracking-normal sm:tracking-relaxed mb-2 sm:mb-5 select-text" style={{ fontSize: 'clamp(15px, 4.5vw, 56px)' }}>
               <motion.span
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="inline-block"
+                className="inline sm:inline-block"
               >
                 Expert Medical Care
-              </motion.span>
-              <br />
-              <motion.span
+              </motion.span>{' '}<br className="hidden sm:block" />{/**/}<motion.span
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                className="inline-block"
+                className="inline sm:inline-block"
               >
                 And Resources For A
-              </motion.span>
-              <br />
-              <motion.span
+              </motion.span>{' '}<br className="hidden sm:block" />{/**/}<motion.span
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-                className="inline-block bg-gradient-to-r from-[#8b5cf6] via-[#7c3aed] to-[#6d28d9] bg-clip-text text-transparent"
+                className="inline sm:inline-block bg-gradient-to-r from-[#8b5cf6] via-[#7c3aed] to-[#6d28d9] bg-clip-text text-transparent"
               >
                 Healthier Life
               </motion.span>
