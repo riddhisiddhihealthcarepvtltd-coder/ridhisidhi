@@ -2,21 +2,23 @@ import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-// Critical Layout Components (Loaded eagerly)
+// Critical Layout Components (Loaded eagerly for first viewport)
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 
-// Modals & Pages (Loaded on-demand for maximum mobile & laptop speed)
+// Deferred Below-the-fold / Modal Components (Lazy-loaded)
+const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
 const AppointmentModal = lazy(() => import('./components/AppointmentModal'));
+
+// Route-based code splitting
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Team = lazy(() => import('./pages/Team'));
 const Contact = lazy(() => import('./pages/Contact'));
 
-// Lightweight fallback loader
+// Lightweight fallback loader for route transitions
 const PageLoader = () => (
   <div className="min-h-[60vh] flex flex-col items-center justify-center">
     <div className="w-10 h-10 border-3 border-[#8b5cf6]/20 border-t-[#8b5cf6] rounded-full animate-spin"></div>
@@ -50,13 +52,22 @@ function App() {
           </AnimatePresence>
         </Suspense>
 
-        <Footer onOpenAppointment={handleOpenAppointment} />
-        <WhatsAppButton onOpenAppointment={handleOpenAppointment} />
+        <Suspense fallback={null}>
+          <Footer onOpenAppointment={handleOpenAppointment} />
+        </Suspense>
 
-        <AppointmentModal 
-          isOpen={isAppointmentOpen} 
-          onClose={handleCloseAppointment} 
-        />
+        <Suspense fallback={null}>
+          <WhatsAppButton />
+        </Suspense>
+
+        {isAppointmentOpen && (
+          <Suspense fallback={null}>
+            <AppointmentModal 
+              isOpen={isAppointmentOpen} 
+              onClose={handleCloseAppointment} 
+            />
+          </Suspense>
+        )}
       </div>
     </BrowserRouter>
   );

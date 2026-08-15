@@ -1,8 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { Award, Building2, Quote, Star, Stethoscope, Users } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import CTA from '../components/CTA';
 import Hero from '../components/Hero';
 import PageTransition from '../components/PageTransition';
 import SafeImage from '../components/SafeImage';
@@ -10,6 +9,9 @@ import SEOHead from '../components/SEOHead';
 import ServiceCard from '../components/ServiceCard';
 import { imageConfig } from '../data/company';
 import { servicesData } from '../data/services';
+
+// Lazy load below-the-fold CTA component
+const CTA = lazy(() => import('../components/CTA'));
 
 const AnimatedCounter = ({ value, suffix = "", duration = 2 }) => {
   const [count, setCount] = useState(0);
@@ -383,7 +385,9 @@ const Home = ({ onOpenAppointment }) => {
         </div>
       </section>
 
-      <CTA onOpenAppointment={onOpenAppointment} />
+      <Suspense fallback={null}>
+        <CTA onOpenAppointment={onOpenAppointment} />
+      </Suspense>
     </PageTransition>
   );
 };

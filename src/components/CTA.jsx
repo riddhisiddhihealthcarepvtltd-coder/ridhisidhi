@@ -36,6 +36,8 @@ const CTA = ({
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={onOpenAppointment}
+              onMouseEnter={() => import('./AppointmentModal')}
+              onTouchStart={() => import('./AppointmentModal')}
               className="px-8 py-4 rounded-full bg-white hover:bg-[#faf5ff] text-[#6d28d9] font-heading font-extrabold text-sm shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 active:scale-95 hover:animate-pulse-ring-white"
             >
               <Calendar className="w-4 h-4 text-[#8b5cf6]" />

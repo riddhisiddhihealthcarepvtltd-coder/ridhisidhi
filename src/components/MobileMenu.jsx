@@ -1,9 +1,8 @@
-import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronRight, MapPin, MessageSquare, Phone, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, MapPin, X, MessageSquare, ChevronRight } from 'lucide-react';
-import { navLinks } from '../data/navigation';
 import { companyInfo } from '../data/company';
+import { navLinks } from '../data/navigation';
 
 const MobileMenu = ({ isOpen, onClose }) => {
   return (
@@ -30,7 +29,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             {/* Header */}
             <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-brand-sky-light">
               <div className="flex items-center gap-3">
-                <img src="/assets/logo.png" alt="Logo" className="w-10 h-10 object-contain rounded-full bg-white p-1 shadow-sm" />
+                <img src="/assets/logo.webp" alt="Logo" className="w-10 h-10 object-contain rounded-full bg-white p-1 shadow-sm" />
                 <div>
                   <div className="font-heading font-bold text-sm text-brand-ink">Riddhi Siddhi</div>
                   <div className="text-[11px] text-brand-muted">Health Care Pvt. Ltd.</div>

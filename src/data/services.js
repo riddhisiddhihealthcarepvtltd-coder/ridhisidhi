@@ -5,7 +5,7 @@ export const servicesData = [
     title: "ओ.पि.डि. सेवा (O.P.D.)",
     shortDesc: "Outpatient Department services providing expert consultations and personalized medical care for all patients.",
     fullDesc: "Our OPD service provides comprehensive outpatient medical consultations by qualified doctors. Patients can walk in for diagnosis, treatment advice, prescriptions, and follow-up care without requiring hospital admission.",
-    image: "/assets/opd.jpeg",
+    image: "/assets/opd.webp",
     badge: "Primary Care",
     features: [
       "Walk-in patient consultations",
@@ -20,7 +20,7 @@ export const servicesData = [
     title: "प्याथोलोजी सेवा (Pathology)",
     shortDesc: "Accurate and reliable pathology testing for blood, urine, and other diagnostic specimens.",
     fullDesc: "Our pathology department handles all types of clinical laboratory tests with precision and care. From routine blood tests to specialized diagnostic panels, results are delivered promptly with high accuracy.",
-    image: "/assets/pathologyroom.jpeg",
+    image: "/assets/pathologyroom.webp",
     badge: "Diagnostics",
     features: [
       "Blood & urine analysis",
@@ -35,7 +35,7 @@ export const servicesData = [
     title: "एक्स-रे सेवा (X-Ray)",
     shortDesc: "Modern X-ray imaging services for quick and accurate bone, chest, and internal organ diagnosis.",
     fullDesc: "We offer digital X-ray services for a wide range of diagnostic needs including chest X-rays, bone fractures, and joint assessments. Our X-ray unit operates with trained radiographers ensuring patient safety.",
-    image: "/assets/xray.jpeg",
+    image: "/assets/xray.webp",
     badge: "Imaging",
     features: [
       "Digital chest & bone X-rays",
@@ -50,7 +50,7 @@ export const servicesData = [
     title: "आकस्मिक सेवा (Emergency)",
     shortDesc: "Immediate emergency medical care available for urgent health situations and critical cases.",
     fullDesc: "Our emergency service is equipped to handle urgent medical situations with prompt attention. Trained staff provide immediate first-aid, stabilization, and necessary referral for critical conditions.",
-    image: "/assets/emergencyroom.jpeg",
+    image: "/assets/emergencyroom.webp",
     badge: "Emergency",
     features: [
       "Immediate patient stabilization",
@@ -65,7 +65,7 @@ export const servicesData = [
     title: "ई.सि.जी. सेवा (E.C.G.)",
     shortDesc: "Electrocardiogram (ECG) testing for accurate heart rhythm and cardiac health assessment.",
     fullDesc: "Our ECG service provides rapid electrocardiogram testing to evaluate heart health, detect arrhythmias, and assess cardiac conditions. Results are reviewed by experienced medical professionals.",
-    image: "/assets/restroom.jpeg",
+    image: "/assets/restroom.webp",
     badge: "Cardiac Care",
     features: [
       "12-lead ECG testing",

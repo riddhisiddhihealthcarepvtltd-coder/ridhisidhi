@@ -68,10 +68,10 @@ const Footer = ({ onOpenAppointment }) => {
                 };
                 return (
                   <li key={svc.id}>
-                    <Link to="/services" className="flex items-center gap-2 hover:text-[#8b5cf6] transition-colors">
+                    <span className="flex items-center gap-2">
                       {iconMap[svc.id] ?? <ChevronRight className="w-4 h-4 text-[#8b5cf6] shrink-0" />}
                       {svc.title}
-                    </Link>
+                    </span>
                   </li>
                 );
               })}
@@ -123,10 +123,10 @@ const Footer = ({ onOpenAppointment }) => {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-white gap-3">
+        <div className="pt-6 flex flex-row flex-wrap items-center justify-between text-xs text-white gap-x-4 gap-y-1">
           <p>© {new Date().getFullYear()} Riddhi Siddhi Health Care Pvt. Ltd. All Rights Reserved.</p>
           <div className="flex items-center gap-4 ">
-            <span>Design & Developed by: <a href='https://kreativemandu.com' className='hover:text-[#8b5cf6] transition-colors' >Kreativemandu Technologies</a></span>
+            <span>Design &amp; Developed by: <a href='https://kreativemandu.com' className='hover:text-[#8b5cf6] transition-colors' >Kreativemandu Technologies</a></span>
           </div>
         </div>
 

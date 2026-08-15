@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Menu } from 'lucide-react';
-import MobileMenu from './MobileMenu';
+import { Mail, MapPin, Menu, Phone } from 'lucide-react';
+import { useState, lazy, Suspense } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { companyInfo } from '../data/company';
+
+// Lazy-loaded Mobile Navigation Drawer
+const MobileMenu = lazy(() => import('./MobileMenu'));
 
 const Navbar = ({ onOpenAppointment }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,7 +52,7 @@ const Navbar = ({ onOpenAppointment }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0 group">
             <img
-              src="/assets/logo.png"
+              src="/assets/logo.webp"
               alt="Riddhi Siddhi Health Care Logo"
               width="56"
               height="56"
@@ -98,7 +100,7 @@ const Navbar = ({ onOpenAppointment }) => {
           {/* Social Icons & Mobile Trigger */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-[#a78bfa] hover:bg-[#8b5cf6] text-white flex items-center justify-center transition-colors shadow-sm">
+              <a href="https://www.facebook.com/profile.php?id=100078727410108" className="w-9 h-9 rounded-full bg-[#a78bfa] hover:bg-[#8b5cf6] text-white flex items-center justify-center transition-colors shadow-sm">
                 <span className="font-serif italic font-bold text-lg leading-none">P</span>
               </a>
               <a href="#" className="w-9 h-9 rounded-full bg-[#a78bfa] hover:bg-[#8b5cf6] text-white flex items-center justify-center transition-colors shadow-sm">
@@ -111,6 +113,8 @@ const Navbar = ({ onOpenAppointment }) => {
 
             <button
               onClick={() => setMobileMenuOpen(true)}
+              onMouseEnter={() => import('./MobileMenu')}
+              onTouchStart={() => import('./MobileMenu')}
               className="lg:hidden p-2 rounded-xl text-[#333] hover:bg-[#f3f4f6] transition-colors"
               aria-label="Open Mobile Menu"
             >
@@ -121,12 +125,16 @@ const Navbar = ({ onOpenAppointment }) => {
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <MobileMenu
-        isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
-        onOpenAppointment={onOpenAppointment}
-      />
+      {/* Mobile Menu (Loaded on-demand) */}
+      {mobileMenuOpen && (
+        <Suspense fallback={null}>
+          <MobileMenu
+            isOpen={mobileMenuOpen}
+            onClose={() => setMobileMenuOpen(false)}
+            onOpenAppointment={onOpenAppointment}
+          />
+        </Suspense>
+      )}
     </>
   );
 };

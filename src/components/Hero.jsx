@@ -56,6 +56,8 @@ const Hero = ({ onOpenAppointment }) => {
             >
               <button
                 onClick={onOpenAppointment}
+                onMouseEnter={() => import('./AppointmentModal')}
+                onTouchStart={() => import('./AppointmentModal')}
                 className="px-3 py-2 sm:px-8 sm:py-3.5 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-semibold text-[11px] sm:text-[15px] transition-all duration-300 active:scale-95 shadow-md shadow-[#8b5cf6]/20 hover:animate-pulse-ring"
               >
                 Book Appointment
@@ -106,7 +108,7 @@ const Hero = ({ onOpenAppointment }) => {
 
               {/* Doctor Image */}
               <img
-                src="/assets/male-doctorbg.png"
+                src="/assets/male-doctorbg.webp"
                 alt="Expert Doctor"
                 width="500"
                 height="500"

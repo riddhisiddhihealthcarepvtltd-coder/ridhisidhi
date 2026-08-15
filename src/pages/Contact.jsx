@@ -59,7 +59,7 @@ const Contact = ({ onOpenAppointment }) => {
             {/* Right Column: Shop Image */}
             <div className="lg:col-span-7 w-full rounded-2xl overflow-hidden shadow-xl border border-white/10 h-[260px] sm:h-[320px] md:h-[400px] lg:h-[550px]">
               <img
-                src="/assets/riddhisiddhishop.jpeg"
+                src="/assets/riddhisiddhishop.webp"
                 alt="Riddhi Siddhi Shop"
                 className="w-full h-full object-cover object-center"
               />

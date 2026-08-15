@@ -34,6 +34,8 @@ const ServiceCard = ({ service, index = 0, onOpenAppointment }) => {
       <div className="pt-4 border-t border-[#e9d5ff] flex items-center justify-between">
         <button
           onClick={onOpenAppointment}
+          onMouseEnter={() => import('./AppointmentModal')}
+          onTouchStart={() => import('./AppointmentModal')}
           className="inline-flex items-center gap-1.5 text-xs font-heading font-bold text-[#8b5cf6] hover:text-[#7c3aed] group-hover:translate-x-0.5 transition-all"
         >
           <span>Learn More</span>

@@ -93,6 +93,8 @@ const Services = ({ onOpenAppointment }) => {
                   <div className="pt-4 border-t border-[#e9d5ff]">
                     <button
                       onClick={onOpenAppointment}
+                      onMouseEnter={() => import('../components/AppointmentModal')}
+                      onTouchStart={() => import('../components/AppointmentModal')}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-heading font-bold text-xs shadow-sm transition-all duration-300 active:scale-95"
                     >
                       <span>Book Service</span>

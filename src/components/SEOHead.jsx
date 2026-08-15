@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { companyInfo } from '../data/company';
 
 const SEOHead = ({ 
@@ -6,7 +6,7 @@ const SEOHead = ({
   description, 
   keywords, 
   path = "/", 
-  image = "/assets/logo.png",
+  image = "/assets/logo.webp",
   type = "website"
 }) => {
   const baseDomain = companyInfo.website || "https://riddhisiddhihealthcare.com.np";
