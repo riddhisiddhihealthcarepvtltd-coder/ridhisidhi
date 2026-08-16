@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { Award, Building2, Quote, Star, Stethoscope, Users } from 'lucide-react';
-import { useEffect, useRef, useState, lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import PageTransition from '../components/PageTransition';
@@ -149,11 +149,11 @@ const Home = ({ onOpenAppointment }) => {
               <div className="flex flex-col gap-3.5 mb-8">
                 <div className="flex items-center gap-4 shrink-0">
                   <div className="w-[56px] h-[56px] rounded-full overflow-hidden border-2 border-transparent">
-                    <SafeImage src={imageConfig.chairman} alt="Emma Stone" className="w-full h-full object-cover" />
+                    <SafeImage src={imageConfig.labTechnologist} alt="Mrs. Pooja Karna" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h4 className="font-sans font-bold text-[17px] text-[#202020] mb-0.5">Emma Stone</h4>
-                    <p className="text-[13px] text-[#000000]">General Practitioner</p>
+                    <h4 className="font-sans font-bold text-[17px] text-[#202020] mb-0.5">Mrs. Pooja Karna</h4>
+                    <p className="text-[13px] text-[#000000]">Lab Technologist</p>
                   </div>
                 </div>
                 <div>
@@ -337,7 +337,7 @@ const Home = ({ onOpenAppointment }) => {
                   MT
                 </div>
                 <div>
-                  <div className="font-heading font-extrabold text-sm text-[#111827]">Mark Thompson</div>
+                  <div className="font-heading font-extrabold text-sm text-[#111827]">Manish Tamang</div>
                   <div className="text-xs text-[#8b5cf6] font-bold">Local Patient • Gokarneshwor</div>
                 </div>
               </div>
@@ -375,7 +375,7 @@ const Home = ({ onOpenAppointment }) => {
                   SJ
                 </div>
                 <div>
-                  <div className="font-heading font-extrabold text-sm text-[#111827]">Sarah Jackson</div>
+                  <div className="font-heading font-extrabold text-sm text-[#111827]">Sarita Jaiswal</div>
                   <div className="text-xs text-[#8b5cf6] font-bold">Patient • Kathmandu</div>
                 </div>
               </div>

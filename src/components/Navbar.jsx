@@ -1,4 +1,4 @@
-import { Mail, MapPin, Menu, Phone } from 'lucide-react';
+import { Facebook, Mail, MapPin, Menu, Phone } from 'lucide-react';
 import { useState, lazy, Suspense } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { companyInfo } from '../data/company';
@@ -100,14 +100,14 @@ const Navbar = ({ onOpenAppointment }) => {
           {/* Social Icons & Mobile Trigger */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center gap-3">
-              <a href="https://www.facebook.com/profile.php?id=100078727410108" className="w-9 h-9 rounded-full bg-[#a78bfa] hover:bg-[#8b5cf6] text-white flex items-center justify-center transition-colors shadow-sm">
-                <span className="font-serif italic font-bold text-lg leading-none">P</span>
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-[#a78bfa] hover:bg-[#8b5cf6] text-white flex items-center justify-center transition-colors shadow-sm">
-                <span className="font-sans font-bold text-sm leading-none">X</span>
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-[#a78bfa] hover:bg-[#8b5cf6] text-white flex items-center justify-center transition-colors shadow-sm">
-                <span className="font-sans font-bold text-sm leading-none">in</span>
+              <a
+                href={companyInfo.facebookUrl || "https://www.facebook.com/profile.php?id=100078727410108"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Facebook Page"
+                className="w-9 h-9 rounded-full bg-[#8b5cf6] hover:bg-[#7c3aed] text-white flex items-center justify-center transition-all duration-200 shadow-sm hover:scale-105"
+              >
+                <Facebook className="w-4.5 h-4.5 fill-current" />
               </a>
             </div>
 
