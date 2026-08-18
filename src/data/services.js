@@ -80,7 +80,7 @@ export const servicesData = [
     title: "होम सर्भिस (Home Service)",
     shortDesc: "Convenient at-home medical services including sample collection, ECG, and nursing care.",
     fullDesc: "We bring quality healthcare to your doorstep. Our home service team provides sample collection, basic diagnostics, wound dressing, and nursing care for patients who cannot visit the clinic.",
-    image: "/assets/homeservice.webp",
+    image: "/assets/homeservices.webp",
     badge: "Home Care",
     features: [
       "Home sample collection",
