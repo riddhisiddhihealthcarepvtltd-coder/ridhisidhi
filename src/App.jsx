@@ -16,6 +16,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Team = lazy(() => import('./pages/Team'));
+const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 // Lightweight fallback loader for route transitions
@@ -45,6 +46,7 @@ function App() {
               <Route path="/about" element={<About onOpenAppointment={handleOpenAppointment} />} />
               <Route path="/services" element={<Services onOpenAppointment={handleOpenAppointment} />} />
               <Route path="/team" element={<Team onOpenAppointment={handleOpenAppointment} />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact onOpenAppointment={handleOpenAppointment} />} />
               {/* Fallback route */}
               <Route path="*" element={<Navigate to="/" replace />} />

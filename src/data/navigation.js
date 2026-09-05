@@ -3,6 +3,7 @@ export const navLinks = [
   { name: "About Us", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Our Team", path: "/team" },
+  { name: "Gallery", path: "/gallery" },
   { name: "Contact Us", path: "/contact" },
 ];
 
@@ -12,6 +13,7 @@ export const footerLinks = {
     { name: "About Us", path: "/about" },
     { name: "Healthcare Services", path: "/services" },
     { name: "Our Team", path: "/team" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Contact Us", path: "/contact" },
   ],
   services: [

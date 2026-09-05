@@ -14,6 +14,7 @@ const Navbar = ({ onOpenAppointment }) => {
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Our Team', path: '/team' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
