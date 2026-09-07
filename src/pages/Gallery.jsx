@@ -6,9 +6,15 @@ import SEOHead from '../components/SEOHead';
 const galleryImages = [
   { src: '/gallery/image.webp', alt: 'Riddhi Siddhi Health Care - Gallery 1' },
   { src: '/gallery/image2.webp', alt: 'Riddhi Siddhi Health Care - Gallery 2' },
-  { src: '/gallery/image3.webp', alt: 'Riddhi Siddhi Health Care - Gallery 3' },
+  { src: '/gallery/image3.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 3' },
   { src: '/gallery/image4.webp', alt: 'Riddhi Siddhi Health Care - Gallery 4' },
   { src: '/gallery/image5.webp', alt: 'Riddhi Siddhi Health Care - Gallery 5' },
+  { src: '/gallery/2323.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 6' },
+  { src: '/gallery/3qwe.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 7' },
+  { src: '/gallery/WhatsApp Image 2026-08-13 at 2.04.06 PM.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 8' },
+  { src: '/gallery/sdds.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 9' },
+  { src: '/gallery/wew.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 10' },
+  { src: '/gallery/1222.jpeg', alt: 'Riddhi Siddhi Health Care - Gallery 11' },
 ];
 
 const containerVariants = {
