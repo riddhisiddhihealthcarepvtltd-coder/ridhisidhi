@@ -19,13 +19,6 @@ const Team = lazy(() => import('./pages/Team'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
 
-// Lightweight fallback loader for route transitions
-const PageLoader = () => (
-  <div className="min-h-[60vh] flex flex-col items-center justify-center">
-    <div className="w-10 h-10 border-3 border-[#8b5cf6]/20 border-t-[#8b5cf6] rounded-full animate-spin"></div>
-    <span className="mt-3 text-xs font-semibold text-slate-400 tracking-wider uppercase">Loading...</span>
-  </div>
-);
 
 function App() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
@@ -39,7 +32,7 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar onOpenAppointment={handleOpenAppointment} />
         
-        <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={null}>
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home onOpenAppointment={handleOpenAppointment} />} />
