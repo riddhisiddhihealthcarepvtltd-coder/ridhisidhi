@@ -2,22 +2,22 @@ import React, { useState, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-// Critical Layout Components (Loaded eagerly for first viewport)
+// Static site with local data only — pages and layout load eagerly so
+// there is no empty-content flash while lazy chunks resolve.
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
-// Deferred Below-the-fold / Modal Components (Lazy-loaded)
-const Footer = lazy(() => import('./components/Footer'));
-const WhatsAppButton = lazy(() => import('./components/WhatsAppButton'));
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Team from './pages/Team';
+import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
+
+// On-demand Modal (only mounts when opened, so lazy loading is safe here)
 const AppointmentModal = lazy(() => import('./components/AppointmentModal'));
-
-// Route-based code splitting
-const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
-const Services = lazy(() => import('./pages/Services'));
-const Team = lazy(() => import('./pages/Team'));
-const Gallery = lazy(() => import('./pages/Gallery'));
-const Contact = lazy(() => import('./pages/Contact'));
 
 
 function App() {
@@ -47,13 +47,9 @@ function App() {
           </AnimatePresence>
         </Suspense>
 
-        <Suspense fallback={null}>
-          <Footer onOpenAppointment={handleOpenAppointment} />
-        </Suspense>
+        <Footer onOpenAppointment={handleOpenAppointment} />
 
-        <Suspense fallback={null}>
-          <WhatsAppButton />
-        </Suspense>
+        <WhatsAppButton />
 
         {isAppointmentOpen && (
           <Suspense fallback={null}>

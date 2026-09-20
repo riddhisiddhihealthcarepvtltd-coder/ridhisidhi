@@ -17,12 +17,12 @@ const Team = ({ onOpenAppointment }) => {
       />
 
       {/* Page Hero */}
-      <section className="bg-figma-purple-tint py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#faf5ff] via-[#f5f3ff] to-[#f3e8ff]/30 py-12 md:py-16 border-b border-[#e9d5ff]">
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex px-3.5 py-1 bg-white border border-figma-purple/20 text-figma-purple text-xs font-heading font-extrabold uppercase tracking-wider rounded-full mb-4 shadow-sm"
+            className="inline-flex px-3.5 py-1 bg-white border border-[#e9d5ff] text-[#8b5cf6] text-xs font-heading font-extrabold uppercase tracking-wider rounded-full mb-3 shadow-sm"
           >
             Professionals
           </motion.span>
@@ -30,15 +30,15 @@ const Team = ({ onOpenAppointment }) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-heading font-extrabold text-slate-900 mb-4 leading-tight tracking-tight"
+            className="text-3xl md:text-4xl font-heading font-extrabold text-[#111827] mb-3 leading-tight"
           >
-            The Team Behind <span className="text-figma-purple">Your Care</span>
+            The Team Behind <span className="text-[#8b5cf6]">Your Care</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto"
+            className="text-[#6b7280] text-base leading-relaxed max-w-2xl mx-auto"
           >
             Our dedicated team is committed to delivering accurate, professional, and compassionate healthcare to every patient.
           </motion.p>
